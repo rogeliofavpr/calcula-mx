@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Calculadoras claras para tu dinero en México.">
+  <title>Calcula MX — Tu dinero, más claro</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="ads.css">
+</head>
+<body>
+  <header class="nav wrap">
+    <a class="brand" href="#inicio" aria-label="Calcula MX inicio"><span>⌁</span> Calcula <b>MX</b></a>
+    <nav aria-label="Navegación principal"><a href="#herramientas">Calculadoras</a><a href="#aprende">Aprende</a><a href="#nosotros">Nosotros</a></nav>
+  </header>
+  <main id="inicio">
+    <section class="hero wrap">
+      <div>
+        <p class="eyebrow">FINANZAS CLARAS PARA MÉXICO</p>
+        <h1>Entiende tu dinero.<br><em>Decide mejor.</em></h1>
+        <p class="lead">Calcula tu ISR, aguinaldo y préstamos sin fórmulas confusas. Gratis, rápido y desde tu celular.</p>
+        <a class="button" href="#herramientas">Usar calculadoras <span>→</span></a>
+        <p class="trust">✓ Sin registro &nbsp;&nbsp; ✓ Tus datos no salen de tu dispositivo</p>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <div class="mini-header"><span class="mini-logo">⌁</span><span>Resumen del mes</span><span class="dots">•••</span></div>
+        <p class="mini-label">INGRESO ESTIMADO</p><p class="mini-money">$18,500<span>.00</span></p>
+        <div class="meter"><i></i></div>
+        <div class="mini-row"><span>ISR estimado</span><b>− $1,807</b></div>
+        <div class="mini-row"><span>Disponible para ti</span><strong>$16,693</strong></div>
+        <div class="flair flair-one"></div><div class="flair flair-two"></div>
+      </div>
+    </section>
+
+    <section class="tools wrap" id="herramientas">
+      <div class="section-intro"><p class="eyebrow">HERRAMIENTAS ESENCIALES</p><h2>Haz números con tranquilidad.</h2><p>Elige una calculadora para empezar. Los resultados son estimaciones educativas y fáciles de entender.</p></div>
+      <div class="tool-grid">
+        <article class="tool-card active"><div class="tool-icon green">▦</div><p class="tag">NÓMINA</p><h3>Calculadora de ISR</h3><p>Conoce una estimación de tu retención y salario neto.</p><button data-tool="isr">Calcular ISR <span>→</span></button></article>
+        <article class="tool-card"><div class="tool-icon yellow">✳</div><p class="tag">PRESTACIONES</p><h3>Calculadora de aguinaldo</h3><p>Estima cuánto te corresponde recibir este fin de año.</p><button data-tool="aguinaldo">Calcular aguinaldo <span>→</span></button></article>
+        <article class="tool-card"><div class="tool-icon coral">⌁</div><p class="tag">CRÉDITOS</p><h3>Simulador de préstamo</h3><p>Visualiza mensualidad, intereses y costo total de un crédito.</p><button data-tool="prestamo">Simular préstamo <span>→</span></button></article>
+      </div>
+    </section>
+    <aside class="ad-band wrap" aria-label="Espacio publicitario">
+      <span>PUBLICIDAD</span>
+      <div class="ad-placeholder">Espacio reservado para Google AdSense</div>
+      <!-- Al aprobar AdSense, sustituye este bloque por una unidad de anuncio responsive. -->
+    </aside>
+
+    <section class="workspace"><div class="wrap calculator-shell">
+      <div class="calc-copy"><p class="eyebrow">CALCULADORA</p><h2 id="calc-title">¿Cuánto ISR me retienen?</h2><p id="calc-description">Ingresa tu salario bruto para ver una estimación de la retención por nómina.</p><div class="source-note">Basado en tarifas de retención del SAT 2026. <a href="https://www.sat.gob.mx/minisitio/NormatividadRMFyRGCE/documentos2026/rmf/anexos/Anexo-8-RMF-2026_DOF-28122025.pdf" target="_blank" rel="noreferrer">Ver fuente ↗</a></div></div>
+      <div class="calculator">
+        <form id="calculator-form">
+          <div id="isr-fields" class="fields">
+            <label>Salario bruto <div class="input-prefix"><span>$</span><input id="isr-income" inputmode="decimal" type="number" min="0" step="0.01" placeholder="Ej. 18500" required><span>MXN</span></div></label>
+            <label>¿Con qué frecuencia recibes tu pago?<select id="isr-period"><option value="monthly">Mensual</option><option value="biweekly">Quincenal</option></select></label>
+          </div>
+          <div id="aguinaldo-fields" class="fields hidden">
+            <label>Salario diario <div class="input-prefix"><span>$</span><input id="daily-salary" inputmode="decimal" type="number" min="0" step="0.01" placeholder="Ej. 500"><span>MXN</span></div></label>
+            <label>Días de aguinaldo que ofrece tu trabajo<input id="bonus-days" type="number" min="15" value="15"></label>
+            <label>Días trabajados en el año<input id="worked-days" type="number" min="0" max="365" value="365"></label>
+          </div>
+          <div id="prestamo-fields" class="fields hidden">
+            <label>Monto que deseas pedir <div class="input-prefix"><span>$</span><input id="loan-amount" inputmode="decimal" type="number" min="1" step="0.01" placeholder="Ej. 50000"><span>MXN</span></div></label>
+            <label>Plazo (meses)<input id="loan-months" type="number" min="1" max="360" value="24"></label>
+            <label>Tasa anual fija (%)<div class="input-prefix"><input id="loan-rate" inputmode="decimal" type="number" min="0" max="200" step="0.01" value="28"><span>%</span></div></label>
+            <label>Comisión de apertura (%)<div class="input-prefix"><input id="opening-fee" inputmode="decimal" type="number" min="0" max="100" step="0.01" value="0"><span>%</span></div></label>
+          </div>
+          <button class="button calculate" type="submit">Calcular <span>→</span></button>
+        </form>
+        <div class="result" id="result" aria-live="polite"><p class="result-caption">RESULTADO ESTIMADO</p><p class="result-empty">Completa los datos para calcular.</p></div>
+      </div>
+    </div></section>
+
+    <section class="learn wrap" id="aprende"><div><p class="eyebrow">APRENDE SIN ENREDOS</p><h2>Las decisiones pequeñas<br>también cuentan.</h2></div><p>Muy pronto: guías prácticas para entender tu nómina, comparar créditos por CAT y organizar mejor tu dinero.</p></section>
+    <aside class="ad-band ad-bottom wrap" aria-label="Espacio publicitario">
+      <span>PUBLICIDAD</span>
+      <div class="ad-placeholder">Espacio reservado para Google AdSense</div>
+      <!-- Mantén siempre contenido útil alrededor de los anuncios. -->
+    </aside>
+  </main>
+  <footer id="nosotros"><div class="wrap footer-inner"><a class="brand" href="#inicio"><span>⌁</span> Calcula <b>MX</b></a><p>Herramientas educativas, no asesoría fiscal ni financiera.</p><p>© 2026 Calcula MX</p></div></footer>
+  <script src="app.js"></script>
+</body>
+</html>
