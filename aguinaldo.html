@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de aguinaldo 2026 en México — cuánto me toca | CalculaMX</title>
+  <meta name="description" content="Calcula tu aguinaldo 2026 según tus días trabajados, con la parte exenta de ISR (30 UMA) y el monto neto a recibir. Mínimo de ley: 15 días, pago antes del 20 de diciembre.">
+  <link rel="canonical" href="https://www.calculamx.net/aguinaldo">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CalculaMX">
+  <meta property="og:title" content="Calculadora de aguinaldo 2026 en México">
+  <meta property="og:description" content="¿Cuánto aguinaldo me toca? Cálculo con días trabajados y parte exenta de ISR.">
+  <meta property="og:url" content="https://www.calculamx.net/aguinaldo">
+  <meta property="og:image" content="https://www.calculamx.net/og-image.png">
+  <meta property="og:locale" content="es_MX">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/ads.css">
+  <script defer src="/js/tax-data.js"></script>
+  <script defer src="/js/site.js"></script>
+  <script defer src="/js/calc-aguinaldo.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculadora de aguinaldo — CalculaMX",
+    "url": "https://www.calculamx.net/aguinaldo",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "es-MX",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MXN" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculamx.net/" },
+      { "@type": "ListItem", "position": 2, "name": "Calculadora de aguinaldo", "item": "https://www.calculamx.net/aguinaldo" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Cuántos días de aguinaldo me corresponden?", "acceptedAnswer": { "@type": "Answer", "text": "La Ley Federal del Trabajo establece un mínimo de 15 días de salario. Si no trabajaste el año completo, recibes la parte proporcional a los días laborados." } },
+      { "@type": "Question", "name": "¿El aguinaldo paga impuestos?", "acceptedAnswer": { "@type": "Answer", "text": "Está exento de ISR hasta 30 veces la UMA diaria. La cantidad que exceda ese monto es gravable y se le calcula ISR." } },
+      { "@type": "Question", "name": "¿Cuándo deben pagar el aguinaldo?", "acceptedAnswer": { "@type": "Answer", "text": "Antes del 20 de diciembre de cada año." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+    <span class="data-chip">DATOS 2026</span>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false">☰</button>
+    <ul id="nav-menu">
+      <li><a href="/isr">ISR</a></li>
+      <li><a href="/aguinaldo" aria-current="page">Aguinaldo</a></li>
+      <li><a href="/prestamos">Préstamos</a></li>
+      <li><a href="/guias/">Guías</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="breadcrumb"><a href="/">Inicio</a> › Calculadora de aguinaldo</p>
+  <h1>Calculadora de aguinaldo 2026</h1>
+  <p class="lead" style="color:var(--muted);max-width:42rem;">Calcula cuánto aguinaldo te corresponde según tus días trabajados, cuánto está exento de ISR y cuánto recibirás neto.</p>
+
+  <div class="calc-wrap">
+    <div class="calc-grid">
+      <form class="panel" id="agui-form">
+        <h2>Tus datos</h2>
+        <div class="field">
+          <label for="agui-sueldo">Sueldo mensual bruto</label>
+          <div class="affix">
+            <span>$</span>
+            <input type="text" id="agui-sueldo" inputmode="decimal" placeholder="12,000" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="agui-dias">Días de aguinaldo <span class="hint">— mínimo de ley: 15</span></label>
+          <input type="number" id="agui-dias" value="15" min="1" max="90" step="1">
+        </div>
+        <div class="field">
+          <label for="agui-trabajados">Días trabajados en el año <span class="hint">— 365 si trabajaste todo el año</span></label>
+          <input type="number" id="agui-trabajados" value="365" min="1" max="365" step="1">
+        </div>
+        <button class="button block" type="submit">Calcular aguinaldo <span aria-hidden="true">→</span></button>
+      </form>
+
+      <div class="result" id="agui-result">
+        <p class="result-empty">Completa tus datos y presiona <strong>Calcular aguinaldo</strong>.</p>
+      </div>
+    </div>
+
+    <div class="how">
+      <h2>Cómo calculamos esto</h2>
+      <ul>
+        <li><strong>Aguinaldo = salario diario × días de aguinaldo × (días trabajados ÷ 365)</strong>.</li>
+        <li>Salario diario = sueldo mensual ÷ 30.</li>
+        <li>Parte exenta = 30 × UMA diaria (2026: $117.31), según el artículo 93 de la Ley del ISR.</li>
+        <li>El ISR de la parte gravada se calcula con el método del <strong>artículo 174 del Reglamento de la LISR</strong>: tasa efectiva incremental sobre tu sueldo mensual.</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="ad-band" aria-label="Espacio publicitario">
+    <span>Publicidad</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000002" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <div class="ad-placeholder">Espacio reservado para Google AdSense</div>
+  </aside>
+
+  <section class="prose">
+    <h2>Cómo se calcula el aguinaldo en México</h2>
+    <p>El aguinaldo es una prestación obligatoria regulada por el <strong>artículo 87 de la Ley Federal del Trabajo</strong>. La fórmula base es <code>salario diario × días × (días trabajados ÷ 365)</code>.</p>
+    <ul>
+      <li><strong>Días de aguinaldo:</strong> mínimo 15; muchas empresas otorgan 20, 30 o más por contrato.</li>
+      <li><strong>Proporción:</strong> si entraste a mitad de año o saliste antes, se paga la parte proporcional.</li>
+      <li><strong>Fecha límite de pago:</strong> antes del 20 de diciembre.</li>
+    </ul>
+    <h3>Ejemplo</h3>
+    <p>Sueldo mensual $12,000 → salario diario $400. Con 15 días y el año completo: 400 × 15 = <strong>$6,000</strong> de aguinaldo bruto. La parte exenta equivale a 30 UMA (unos $3,519); el resto es gravable y se le calcula ISR, así que el neto queda un poco por debajo de los $6,000.</p>
+    <p class="callout">Quienes ganan alrededor de un salario mínimo suelen recibir su aguinaldo sin retención porque no rebasan la parte exenta.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <details class="faq">
+      <summary>¿Y si me pagan por comisiones o sueldo variable?</summary>
+      <p>Se toma el promedio de las percepciones variables del periodo. Esta calculadora asume sueldo fijo; para sueldo variable usa tu promedio mensual.</p>
+    </details>
+    <details class="faq">
+      <summary>Renuncié en septiembre, ¿me deben aguinaldo?</summary>
+      <p>Sí. Te corresponde la parte proporcional por los días trabajados hasta tu último día, y debe pagarse junto con tu finiquito.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Qué pasa si mi empresa no paga el aguinaldo?</summary>
+      <p>Puedes presentar una queja ante la PROFEDET. El plazo para reclamarlo es de un año.</p>
+    </details>
+
+    <p class="mt"><a href="/guias/como-se-calcula-el-aguinaldo">Guía completa: cómo se calcula el aguinaldo →</a></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+        <p>Calculadoras fiscales y financieras para México. Herramientas educativas; no constituyen asesoría fiscal ni financiera.</p>
+      </div>
+      <div>
+        <h4>Calculadoras</h4>
+        <a href="/isr">ISR</a>
+        <a href="/aguinaldo">Aguinaldo</a>
+        <a href="/prestamos">Préstamos</a>
+      </div>
+      <div>
+        <h4>Recursos</h4>
+        <a href="/guias/">Guías</a>
+        <a href="/guias/tabla-isr-2026">Tabla ISR 2026</a>
+        <a href="/acerca">Acerca de</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/privacidad">Aviso de privacidad</a>
+        <a href="/terminos">Términos de uso</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> CalculaMX · www.calculamx.net</span>
+      <span>Datos fiscales revisados en 2026</span>
+    </div>
+  </div>
+</footer>
+
+<div class="consent" hidden>
+  <p>Usamos cookies propias y de Google (AdSense y Analytics) para mostrar publicidad y medir el tráfico. Consulta el <a href="/privacidad">aviso de privacidad</a>.</p>
+  <div class="actions">
+    <button data-reject>Rechazar</button>
+    <button data-accept>Aceptar</button>
+  </div>
+</div>
+
+</body>
+</html>

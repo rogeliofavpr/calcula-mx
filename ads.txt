@@ -1,0 +1,4 @@
+# CalculaMX — ads.txt
+# Reemplaza pub-XXXXXXXXXXXXXXXX por tu ID de editor de Google AdSense
+# (AdSense > Cuenta > Información de la cuenta).
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
