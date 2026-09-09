@@ -5,8 +5,8 @@
   'use strict';
 
   /* ---------- IDs a reemplazar cuando estén disponibles ---------- */
-  var ADSENSE_PUB_ID = 'ca-pub-XXXXXXXXXXXXXXXX';   /* AdSense: ca-pub-… */
-  var GA4_ID         = 'G-XXXXXXXXXX';               /* Google Analytics 4 */
+  var ADSENSE_PUB_ID = 'ca-pub-XXXXXXXXXXXXXXXX';   /* AdSense: ca-pub-… (pendiente) */
+  var GA4_ID         = 'G-HQWK5N6623';               /* Google Analytics 4 */
 
   /* ---------- Año dinámico ---------- */
   document.querySelectorAll('[data-year]').forEach(function (el) {
