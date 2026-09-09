@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulador de préstamo — pago mensual, CAT y tabla de amortización | CalculaMX</title>
+  <meta name="description" content="Calcula la mensualidad de un préstamo, el total de intereses, el CAT estimado y la tabla de amortización completa. Incluye comisión de apertura e IVA sobre intereses.">
+  <link rel="canonical" href="https://www.calculamx.net/prestamos">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CalculaMX">
+  <meta property="og:title" content="Simulador de préstamo — pago mensual y CAT">
+  <meta property="og:description" content="Mensualidad, intereses totales, CAT y tabla de amortización de tu crédito.">
+  <meta property="og:url" content="https://www.calculamx.net/prestamos">
+  <meta property="og:image" content="https://www.calculamx.net/og-image.png">
+  <meta property="og:locale" content="es_MX">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/ads.css">
+  <script defer src="/js/tax-data.js"></script>
+  <script defer src="/js/site.js"></script>
+  <script defer src="/js/calc-prestamos.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Simulador de préstamo — CalculaMX",
+    "url": "https://www.calculamx.net/prestamos",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "es-MX",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MXN" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculamx.net/" },
+      { "@type": "ListItem", "position": 2, "name": "Simulador de préstamo", "item": "https://www.calculamx.net/prestamos" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Cómo se calcula la mensualidad de un préstamo?", "acceptedAnswer": { "@type": "Answer", "text": "Con la fórmula de amortización francesa: pago = monto × i / (1 − (1 + i)^−n), donde i es la tasa de interés mensual y n el número de meses." } },
+      { "@type": "Question", "name": "¿Qué es el CAT?", "acceptedAnswer": { "@type": "Answer", "text": "El Costo Anual Total expresa en un solo porcentaje el costo de un crédito: incluye intereses, comisiones y algunos gastos. Sirve para comparar ofertas de distintas instituciones." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+    <span class="data-chip">DATOS 2026</span>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false">☰</button>
+    <ul id="nav-menu">
+      <li><a href="/isr">ISR</a></li>
+      <li><a href="/aguinaldo">Aguinaldo</a></li>
+      <li><a href="/prestamos" aria-current="page">Préstamos</a></li>
+      <li><a href="/guias/">Guías</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="breadcrumb"><a href="/">Inicio</a> › Simulador de préstamo</p>
+  <h1>Simulador de préstamo</h1>
+  <p class="lead" style="color:var(--muted);max-width:42rem;">Calcula tu pago mensual, cuánto pagarás de intereses, el CAT estimado y revisa la tabla de amortización mes por mes.</p>
+
+  <div class="calc-wrap">
+    <div class="calc-grid">
+      <form class="panel" id="loan-form">
+        <h2>Datos del crédito</h2>
+        <div class="field">
+          <label for="loan-amount">Monto del préstamo</label>
+          <div class="affix">
+            <span>$</span>
+            <input type="text" id="loan-amount" inputmode="decimal" placeholder="100,000" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="loan-rate">Tasa de interés anual <span class="hint">— ordinaria, sin IVA</span></label>
+          <div class="affix">
+            <input type="text" id="loan-rate" inputmode="decimal" placeholder="24" autocomplete="off">
+            <span>%</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="loan-months">Plazo (meses)</label>
+          <input type="number" id="loan-months" placeholder="36" min="1" max="480" step="1">
+        </div>
+        <div class="field">
+          <label for="loan-fee">Comisión de apertura (opcional)</label>
+          <div class="affix">
+            <input type="text" id="loan-fee" inputmode="decimal" placeholder="0" autocomplete="off">
+            <span>%</span>
+          </div>
+        </div>
+        <div class="field field-check">
+          <input type="checkbox" id="loan-iva">
+          <label for="loan-iva">Agregar IVA (16 %) sobre los intereses</label>
+        </div>
+        <button class="button block" type="submit">Calcular préstamo <span aria-hidden="true">→</span></button>
+      </form>
+
+      <div class="result" id="loan-result">
+        <p class="result-empty">Ingresa los datos del crédito y presiona <strong>Calcular préstamo</strong>.</p>
+      </div>
+    </div>
+
+    <div id="loan-tabla" class="prose"></div>
+
+    <div class="how">
+      <h2>Cómo calculamos esto</h2>
+      <ul>
+        <li>Sistema de <strong>amortización francés</strong>: pago fijo mensual (cuando no hay IVA sobre intereses). Con el tiempo cada pago cubre más capital y menos intereses.</li>
+        <li><code>pago = monto × i ÷ (1 − (1 + i)<sup>−n</sup>)</code>, con <code>i</code> = tasa anual ÷ 12 y <code>n</code> = plazo en meses.</li>
+        <li>El <strong>CAT estimado</strong> considera el monto, los pagos y la comisión de apertura, sin IVA. El CAT oficial del banco puede ser mayor por seguros y otros cargos.</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="ad-band" aria-label="Espacio publicitario">
+    <span>Publicidad</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000003" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <div class="ad-placeholder">Espacio reservado para Google AdSense</div>
+  </aside>
+
+  <section class="prose">
+    <h2>Sobre esta calculadora</h2>
+    <p>Funciona para cualquier crédito de pagos fijos: personal, de nómina, automotriz o hipotecario. Solo ajusta el plazo en meses (por ejemplo, 240 para 20 años).</p>
+    <h3>¿Qué tasa debo poner?</h3>
+    <p>La tasa de interés anual ordinaria que te ofrecen. Si te dan una tasa mensual, multiplícala por 12. No uses el CAT: ese ya incluye comisiones.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <details class="faq">
+      <summary>¿Conviene pagar por adelantado?</summary>
+      <p>Casi siempre. Los pagos anticipados a capital reducen los intereses futuros. Revisa que tu contrato no tenga penalización por prepago.</p>
+    </details>
+    <details class="faq">
+      <summary>¿El IVA aplica a todos los créditos?</summary>
+      <p>El IVA sobre intereses aplica a créditos al consumo otorgados por instituciones no bancarias o para ciertos fines. Los créditos hipotecarios para vivienda y los de la banca para personas físicas suelen estar exentos.</p>
+    </details>
+
+    <p class="mt"><a href="/guias/que-es-el-cat">Guía: qué es el CAT y cómo comparar créditos →</a></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+        <p>Calculadoras fiscales y financieras para México. Herramientas educativas; no constituyen asesoría fiscal ni financiera.</p>
+      </div>
+      <div>
+        <h4>Calculadoras</h4>
+        <a href="/isr">ISR</a>
+        <a href="/aguinaldo">Aguinaldo</a>
+        <a href="/prestamos">Préstamos</a>
+      </div>
+      <div>
+        <h4>Recursos</h4>
+        <a href="/guias/">Guías</a>
+        <a href="/guias/tabla-isr-2026">Tabla ISR 2026</a>
+        <a href="/acerca">Acerca de</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/privacidad">Aviso de privacidad</a>
+        <a href="/terminos">Términos de uso</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> CalculaMX · www.calculamx.net</span>
+      <span>Datos fiscales revisados en 2026</span>
+    </div>
+  </div>
+</footer>
+
+<div class="consent" hidden>
+  <p>Usamos cookies propias y de Google (AdSense y Analytics) para mostrar publicidad y medir el tráfico. Consulta el <a href="/privacidad">aviso de privacidad</a>.</p>
+  <div class="actions">
+    <button data-reject>Rechazar</button>
+    <button data-accept>Aceptar</button>
+  </div>
+</div>
+
+</body>
+</html>

@@ -3,82 +3,191 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Calculadoras claras para tu dinero en México.">
-  <title>Calcula MX — Tu dinero, más claro</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="ads.css">
+  <title>CalculaMX — Calculadoras de ISR, aguinaldo y préstamos en México</title>
+  <meta name="description" content="Calcula gratis tu ISR, tu aguinaldo y la mensualidad de un préstamo con las tarifas oficiales de México 2026. Sin registro, con el desglose completo de cada cálculo.">
+  <link rel="canonical" href="https://www.calculamx.net/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CalculaMX">
+  <meta property="og:title" content="CalculaMX — Calculadoras de ISR, aguinaldo y préstamos">
+  <meta property="og:description" content="Calcula tu ISR, aguinaldo y préstamos con las tarifas oficiales de México 2026.">
+  <meta property="og:url" content="https://www.calculamx.net/">
+  <meta property="og:image" content="https://www.calculamx.net/og-image.png">
+  <meta property="og:locale" content="es_MX">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/ads.css">
+  <script defer src="/js/tax-data.js"></script>
+  <script defer src="/js/site.js"></script>
+  <script defer src="/js/hero.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CalculaMX",
+    "url": "https://www.calculamx.net/",
+    "inLanguage": "es-MX"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CalculaMX",
+    "url": "https://www.calculamx.net/",
+    "logo": "https://www.calculamx.net/favicon.svg"
+  }
+  </script>
 </head>
 <body>
-  <header class="nav wrap">
-    <a class="brand" href="#inicio" aria-label="Calcula MX inicio"><span>⌁</span> Calcula <b>MX</b></a>
-    <nav aria-label="Navegación principal"><a href="#herramientas">Calculadoras</a><a href="#aprende">Aprende</a><a href="#nosotros">Nosotros</a></nav>
-  </header>
-  <main id="inicio">
-    <section class="hero wrap">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+    <span class="data-chip">DATOS 2026</span>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false">☰</button>
+    <ul id="nav-menu">
+      <li><a href="/isr">ISR</a></li>
+      <li><a href="/aguinaldo">Aguinaldo</a></li>
+      <li><a href="/prestamos">Préstamos</a></li>
+      <li><a href="/guias/">Guías</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div class="hero-grid">
       <div>
-        <p class="eyebrow">FINANZAS CLARAS PARA MÉXICO</p>
+        <p class="eyebrow">Finanzas claras para México</p>
         <h1>Entiende tu dinero.<br><em>Decide mejor.</em></h1>
-        <p class="lead">Calcula tu ISR, aguinaldo y préstamos sin fórmulas confusas. Gratis, rápido y desde tu celular.</p>
-        <a class="button" href="#herramientas">Usar calculadoras <span>→</span></a>
-        <p class="trust">✓ Sin registro &nbsp;&nbsp; ✓ Tus datos no salen de tu dispositivo</p>
+        <p class="lead">Calcula tu ISR, tu aguinaldo y la mensualidad de un préstamo con las tarifas oficiales vigentes. Gratis, sin registro y con el desglose completo.</p>
+        <a class="button" href="#herramientas">Ver calculadoras <span aria-hidden="true">→</span></a>
+        <p class="trust">Fuentes: <strong>SAT · DOF · LFT · CONDUSEF</strong> — datos revisados en 2026</p>
       </div>
-      <div class="hero-card" aria-hidden="true">
-        <div class="mini-header"><span class="mini-logo">⌁</span><span>Resumen del mes</span><span class="dots">•••</span></div>
-        <p class="mini-label">INGRESO ESTIMADO</p><p class="mini-money">$18,500<span>.00</span></p>
-        <div class="meter"><i></i></div>
-        <div class="mini-row"><span>ISR estimado</span><b>− $1,807</b></div>
-        <div class="mini-row"><span>Disponible para ti</span><strong>$16,693</strong></div>
-        <div class="flair flair-one"></div><div class="flair flair-two"></div>
-      </div>
-    </section>
 
-    <section class="tools wrap" id="herramientas">
-      <div class="section-intro"><p class="eyebrow">HERRAMIENTAS ESENCIALES</p><h2>Haz números con tranquilidad.</h2><p>Elige una calculadora para empezar. Los resultados son estimaciones educativas y fáciles de entender.</p></div>
-      <div class="tool-grid">
-        <article class="tool-card active"><div class="tool-icon green">▦</div><p class="tag">NÓMINA</p><h3>Calculadora de ISR</h3><p>Conoce una estimación de tu retención y salario neto.</p><button data-tool="isr">Calcular ISR <span>→</span></button></article>
-        <article class="tool-card"><div class="tool-icon yellow">✳</div><p class="tag">PRESTACIONES</p><h3>Calculadora de aguinaldo</h3><p>Estima cuánto te corresponde recibir este fin de año.</p><button data-tool="aguinaldo">Calcular aguinaldo <span>→</span></button></article>
-        <article class="tool-card"><div class="tool-icon coral">⌁</div><p class="tag">CRÉDITOS</p><h3>Simulador de préstamo</h3><p>Visualiza mensualidad, intereses y costo total de un crédito.</p><button data-tool="prestamo">Simular préstamo <span>→</span></button></article>
+      <div class="hero-calc">
+        <p class="result-caption">ISR rápido</p>
+        <label for="hero-income">Salario mensual bruto</label>
+        <div class="affix">
+          <span>$</span>
+          <input id="hero-income" type="text" inputmode="decimal" placeholder="18,500" autocomplete="off">
+          <span>MXN</span>
+        </div>
+        <div class="out">
+          <div class="n" id="hero-net">—</div>
+          <div class="lbl" id="hero-detail">Escribe tu salario mensual bruto</div>
+        </div>
+        <p class="mini-link"><a href="/isr">Cálculo completo con subsidio e IMSS →</a></p>
       </div>
-    </section>
-    <aside class="ad-band wrap" aria-label="Espacio publicitario">
-      <span>PUBLICIDAD</span>
-      <div class="ad-placeholder">Espacio reservado para Google AdSense</div>
-      <!-- Al aprobar AdSense, sustituye este bloque por una unidad de anuncio responsive. -->
-    </aside>
+    </div>
+  </section>
 
-    <section class="workspace"><div class="wrap calculator-shell">
-      <div class="calc-copy"><p class="eyebrow">CALCULADORA</p><h2 id="calc-title">¿Cuánto ISR me retienen?</h2><p id="calc-description">Ingresa tu salario bruto para ver una estimación de la retención por nómina.</p><div class="source-note">Basado en tarifas de retención del SAT 2026. <a href="https://www.sat.gob.mx/minisitio/NormatividadRMFyRGCE/documentos2026/rmf/anexos/Anexo-8-RMF-2026_DOF-28122025.pdf" target="_blank" rel="noreferrer">Ver fuente ↗</a></div></div>
-      <div class="calculator">
-        <form id="calculator-form">
-          <div id="isr-fields" class="fields">
-            <label>Salario bruto <div class="input-prefix"><span>$</span><input id="isr-income" inputmode="decimal" type="number" min="0" step="0.01" placeholder="Ej. 18500" required><span>MXN</span></div></label>
-            <label>¿Con qué frecuencia recibes tu pago?<select id="isr-period"><option value="monthly">Mensual</option><option value="biweekly">Quincenal</option></select></label>
-          </div>
-          <div id="aguinaldo-fields" class="fields hidden">
-            <label>Salario diario <div class="input-prefix"><span>$</span><input id="daily-salary" inputmode="decimal" type="number" min="0" step="0.01" placeholder="Ej. 500"><span>MXN</span></div></label>
-            <label>Días de aguinaldo que ofrece tu trabajo<input id="bonus-days" type="number" min="15" value="15"></label>
-            <label>Días trabajados en el año<input id="worked-days" type="number" min="0" max="365" value="365"></label>
-          </div>
-          <div id="prestamo-fields" class="fields hidden">
-            <label>Monto que deseas pedir <div class="input-prefix"><span>$</span><input id="loan-amount" inputmode="decimal" type="number" min="1" step="0.01" placeholder="Ej. 50000"><span>MXN</span></div></label>
-            <label>Plazo (meses)<input id="loan-months" type="number" min="1" max="360" value="24"></label>
-            <label>Tasa anual fija (%)<div class="input-prefix"><input id="loan-rate" inputmode="decimal" type="number" min="0" max="200" step="0.01" value="28"><span>%</span></div></label>
-            <label>Comisión de apertura (%)<div class="input-prefix"><input id="opening-fee" inputmode="decimal" type="number" min="0" max="100" step="0.01" value="0"><span>%</span></div></label>
-          </div>
-          <button class="button calculate" type="submit">Calcular <span>→</span></button>
-        </form>
-        <div class="result" id="result" aria-live="polite"><p class="result-caption">RESULTADO ESTIMADO</p><p class="result-empty">Completa los datos para calcular.</p></div>
+  <section class="section wrap" id="herramientas">
+    <div class="section-head">
+      <h2>Haz números con tranquilidad</h2>
+      <p>Elige una calculadora. Los resultados son estimaciones educativas, con el desglose a la vista y la fuente citada.</p>
+    </div>
+    <div class="tool-grid">
+      <a class="tool-card" href="/isr">
+        <div class="tool-icon g">▦</div>
+        <p class="tag">Nómina</p>
+        <h3>Calculadora de ISR</h3>
+        <p>Retención mensual, quincenal o anual, con subsidio para el empleo e IMSS para conocer tu salario neto.</p>
+        <p class="go">Calcular ISR →</p>
+      </a>
+      <a class="tool-card" href="/aguinaldo">
+        <div class="tool-icon y">✳</div>
+        <p class="tag">Prestaciones</p>
+        <h3>Calculadora de aguinaldo</h3>
+        <p>Cuánto te toca según tus días trabajados, con la parte exenta de ISR (30 UMA) y el neto a recibir.</p>
+        <p class="go">Calcular aguinaldo →</p>
+      </a>
+      <a class="tool-card" href="/prestamos">
+        <div class="tool-icon c">⌁</div>
+        <p class="tag">Créditos</p>
+        <h3>Simulador de préstamo</h3>
+        <p>Pago mensual, intereses totales, CAT estimado y la tabla de amortización completa.</p>
+        <p class="go">Simular préstamo →</p>
+      </a>
+    </div>
+  </section>
+
+  <aside class="ad-band wrap" aria-label="Espacio publicitario">
+    <span>Publicidad</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <div class="ad-placeholder">Espacio reservado para Google AdSense</div>
+  </aside>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>Aprende sin enredos</h2>
+      <p>Guías cortas y con ejemplos sobre los cálculos que más importan a los trabajadores en México.</p>
+    </div>
+    <div class="tool-grid">
+      <a class="tool-card" href="/guias/como-se-calcula-el-isr">
+        <p class="tag">Guía</p>
+        <h3>Cómo se calcula el ISR</h3>
+        <p>Ingreso gravable, tarifa del artículo 96 y subsidio para el empleo, paso a paso.</p>
+        <p class="go">Leer →</p>
+      </a>
+      <a class="tool-card" href="/guias/como-se-calcula-el-aguinaldo">
+        <p class="tag">Guía</p>
+        <h3>Cómo se calcula el aguinaldo</h3>
+        <p>Días de ley, cálculo proporcional y la parte exenta de impuestos.</p>
+        <p class="go">Leer →</p>
+      </a>
+      <a class="tool-card" href="/guias/tabla-isr-2026">
+        <p class="tag">Referencia</p>
+        <h3>Tabla de ISR 2026</h3>
+        <p>Las tarifas completas mensual, quincenal y anual, con explicación de cada columna.</p>
+        <p class="go">Ver tabla →</p>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+        <p>Calculadoras fiscales y financieras para México. Herramientas educativas; no constituyen asesoría fiscal ni financiera.</p>
       </div>
-    </div></section>
+      <div>
+        <h4>Calculadoras</h4>
+        <a href="/isr">ISR</a>
+        <a href="/aguinaldo">Aguinaldo</a>
+        <a href="/prestamos">Préstamos</a>
+      </div>
+      <div>
+        <h4>Recursos</h4>
+        <a href="/guias/">Guías</a>
+        <a href="/guias/tabla-isr-2026">Tabla ISR 2026</a>
+        <a href="/acerca">Acerca de</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/privacidad">Aviso de privacidad</a>
+        <a href="/terminos">Términos de uso</a>
+      </div>
+    </div>
+    <p class="footer-sources">Fuentes: Ley del ISR (arts. 93, 96, 152), Anexo 8 de la RMF (DOF 28/12/2025), UMA del INEGI, salario mínimo de la CONASAMI, Ley Federal del Trabajo (art. 87) y metodología de CAT de la CONDUSEF.</p>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> CalculaMX · www.calculamx.net</span>
+      <span>Datos fiscales revisados en 2026</span>
+    </div>
+  </div>
+</footer>
 
-    <section class="learn wrap" id="aprende"><div><p class="eyebrow">APRENDE SIN ENREDOS</p><h2>Las decisiones pequeñas<br>también cuentan.</h2></div><p>Muy pronto: guías prácticas para entender tu nómina, comparar créditos por CAT y organizar mejor tu dinero.</p></section>
-    <aside class="ad-band ad-bottom wrap" aria-label="Espacio publicitario">
-      <span>PUBLICIDAD</span>
-      <div class="ad-placeholder">Espacio reservado para Google AdSense</div>
-      <!-- Mantén siempre contenido útil alrededor de los anuncios. -->
-    </aside>
-  </main>
-  <footer id="nosotros"><div class="wrap footer-inner"><a class="brand" href="#inicio"><span>⌁</span> Calcula <b>MX</b></a><p>Herramientas educativas, no asesoría fiscal ni financiera.</p><p>© 2026 Calcula MX</p></div></footer>
-  <script src="app.js"></script>
+<div class="consent" hidden>
+  <p>Usamos cookies propias y de Google (AdSense y Analytics) para mostrar publicidad y medir el tráfico. Consulta el <a href="/privacidad">aviso de privacidad</a>.</p>
+  <div class="actions">
+    <button data-reject>Rechazar</button>
+    <button data-accept>Aceptar</button>
+  </div>
+</div>
+
 </body>
 </html>

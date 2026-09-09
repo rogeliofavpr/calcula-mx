@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de ISR 2026 en México — sueldo mensual, quincenal y anual | CalculaMX</title>
+  <meta name="description" content="Calcula la retención de ISR sobre tu sueldo en México 2026: mensual, quincenal o anual, con subsidio para el empleo y estimación de IMSS. Desglose y tasa efectiva.">
+  <link rel="canonical" href="https://www.calculamx.net/isr">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CalculaMX">
+  <meta property="og:title" content="Calculadora de ISR 2026 en México">
+  <meta property="og:description" content="ISR mensual, quincenal o anual con subsidio para el empleo y desglose completo.">
+  <meta property="og:url" content="https://www.calculamx.net/isr">
+  <meta property="og:image" content="https://www.calculamx.net/og-image.png">
+  <meta property="og:locale" content="es_MX">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/ads.css">
+  <script defer src="/js/tax-data.js"></script>
+  <script defer src="/js/site.js"></script>
+  <script defer src="/js/calc-isr.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculadora de ISR — CalculaMX",
+    "url": "https://www.calculamx.net/isr",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "es-MX",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MXN" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculamx.net/" },
+      { "@type": "ListItem", "position": 2, "name": "Calculadora de ISR", "item": "https://www.calculamx.net/isr" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Cómo se calcula el ISR de un sueldo en México?", "acceptedAnswer": { "@type": "Answer", "text": "Se ubica el ingreso gravable en la tarifa del artículo 96 de la Ley del ISR, se aplica el porcentaje sobre el excedente del límite inferior, se suma la cuota fija y al resultado se le resta el subsidio para el empleo cuando corresponde." } },
+      { "@type": "Question", "name": "¿Qué es el subsidio para el empleo en 2026?", "acceptedAnswer": { "@type": "Answer", "text": "Es un apoyo fiscal para trabajadores de menores ingresos. En 2026 es un monto mensual fijo de alrededor de 535 pesos que se resta del ISR cuando el ingreso mensual gravable no rebasa 11,492.66 pesos." } },
+      { "@type": "Question", "name": "¿La calculadora incluye el IMSS?", "acceptedAnswer": { "@type": "Answer", "text": "De forma opcional estima la cuota obrero del IMSS para darte una idea de tu salario neto. Es una aproximación: el cálculo exacto depende de tu salario base de cotización y sus topes en UMA." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+    <span class="data-chip">DATOS 2026</span>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false">☰</button>
+    <ul id="nav-menu">
+      <li><a href="/isr" aria-current="page">ISR</a></li>
+      <li><a href="/aguinaldo">Aguinaldo</a></li>
+      <li><a href="/prestamos">Préstamos</a></li>
+      <li><a href="/guias/">Guías</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="breadcrumb"><a href="/">Inicio</a> › Calculadora de ISR</p>
+  <h1>Calculadora de ISR 2026</h1>
+  <p class="lead" style="color:var(--muted);max-width:42rem;">Estima la retención de ISR sobre tu sueldo con las tarifas vigentes en México. Elige el periodo y agrega el IMSS para ver tu salario neto.</p>
+
+  <div class="calc-wrap">
+    <div class="calc-grid">
+      <form class="panel" id="isr-form">
+        <h2>Tus datos</h2>
+        <div class="field">
+          <label for="isr-income">Salario bruto <span class="hint">— antes de impuestos</span></label>
+          <div class="affix">
+            <span>$</span>
+            <input type="text" id="isr-income" inputmode="decimal" placeholder="18,500" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="isr-period">Periodo de pago</label>
+          <select id="isr-period">
+            <option value="mensual">Mensual</option>
+            <option value="quincenal">Quincenal</option>
+            <option value="anual">Anual</option>
+          </select>
+        </div>
+        <div class="field field-check">
+          <input type="checkbox" id="isr-imss">
+          <label for="isr-imss">Estimar también la cuota del IMSS del trabajador (salario neto)</label>
+        </div>
+        <button class="button block" type="submit">Calcular ISR <span aria-hidden="true">→</span></button>
+      </form>
+
+      <div class="result" id="isr-result">
+        <p class="result-empty">Completa tus datos y presiona <strong>Calcular ISR</strong> para ver el desglose.</p>
+      </div>
+    </div>
+
+    <div class="how">
+      <h2>Cómo calculamos esto</h2>
+      <ul>
+        <li>Ubicamos tu salario en la tarifa del <strong>artículo 96</strong> (mensual/quincenal) o <strong>152</strong> (anual) de la Ley del ISR, ejercicio 2026.</li>
+        <li>ISR = cuota fija + (salario − límite inferior) × porcentaje sobre el excedente.</li>
+        <li>Restamos el <strong>subsidio para el empleo</strong> (2026: hasta $535.65 mensuales) si tu ingreso no rebasa $11,492.66.</li>
+        <li>El IMSS es una estimación con SBC = salario × 1.0452 y las cuotas obrero vigentes; no incluye Infonavit ni pensión alimenticia.</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="ad-band" aria-label="Espacio publicitario">
+    <span>Publicidad</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000001" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <div class="ad-placeholder">Espacio reservado para Google AdSense</div>
+  </aside>
+
+  <section class="prose">
+    <h2>Cómo se calcula el ISR sobre el sueldo</h2>
+    <p>El impuesto sobre la renta de sueldos y salarios se determina con la tarifa del <strong>artículo 96 de la Ley del ISR</strong> para el cálculo por periodo, o del <strong>artículo 152</strong> para el cálculo anual. El procedimiento es:</p>
+    <ol>
+      <li>Ubica tu ingreso gravable entre el <em>límite inferior</em> y el <em>límite superior</em> de un renglón.</li>
+      <li>Resta el límite inferior a tu ingreso: obtienes el <em>excedente</em>.</li>
+      <li>Multiplica el excedente por el <em>porcentaje</em> de ese renglón.</li>
+      <li>Suma la <em>cuota fija</em> del renglón.</li>
+      <li>Resta el <strong>subsidio para el empleo</strong> si tu ingreso gravable no rebasa el tope.</li>
+    </ol>
+    <p class="callout">Para 2026 las tarifas se actualizaron por inflación acumulada; los porcentajes marginales no cambiaron. Consulta la <a href="/guias/tabla-isr-2026">tabla de ISR 2026 completa</a>.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <details class="faq">
+      <summary>¿El resultado es mi ISR anual o el del periodo?</summary>
+      <p>El que elijas. En "Mensual" y "Quincenal" usamos la tarifa del artículo 96; en "Anual", la del 152. El cálculo anual sirve para estimar tu declaración, donde además puedes aplicar deducciones personales.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Por qué mi recibo de nómina muestra otra cantidad?</summary>
+      <p>Tu patrón puede calcular con impuesto acumulado del año y ajustar la retención mes a mes. También influyen percepciones exentas, vales, fondo de ahorro o previsión social.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Incluye deducciones personales?</summary>
+      <p>Todavía no. Esta versión calcula la retención sobre el ingreso gravable. Estamos preparando una calculadora de declaración anual con deducciones (gastos médicos, colegiaturas, intereses hipotecarios, aportaciones al retiro).</p>
+    </details>
+
+    <p class="mt"><a href="/guias/como-se-calcula-el-isr">Guía completa: cómo se calcula el ISR paso a paso →</a></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+        <p>Calculadoras fiscales y financieras para México. Herramientas educativas; no constituyen asesoría fiscal ni financiera.</p>
+      </div>
+      <div>
+        <h4>Calculadoras</h4>
+        <a href="/isr">ISR</a>
+        <a href="/aguinaldo">Aguinaldo</a>
+        <a href="/prestamos">Préstamos</a>
+      </div>
+      <div>
+        <h4>Recursos</h4>
+        <a href="/guias/">Guías</a>
+        <a href="/guias/tabla-isr-2026">Tabla ISR 2026</a>
+        <a href="/acerca">Acerca de</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/privacidad">Aviso de privacidad</a>
+        <a href="/terminos">Términos de uso</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> CalculaMX · www.calculamx.net</span>
+      <span>Datos fiscales revisados en 2026</span>
+    </div>
+  </div>
+</footer>
+
+<div class="consent" hidden>
+  <p>Usamos cookies propias y de Google (AdSense y Analytics) para mostrar publicidad y medir el tráfico. Consulta el <a href="/privacidad">aviso de privacidad</a>.</p>
+  <div class="actions">
+    <button data-reject>Rechazar</button>
+    <button data-accept>Aceptar</button>
+  </div>
+</div>
+
+</body>
+</html>

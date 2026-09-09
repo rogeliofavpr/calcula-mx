@@ -1,1 +1,25 @@
-.ad-band{margin:0 auto 88px;text-align:center}.ad-band>span{display:block;font:10px 'DM Mono',monospace;letter-spacing:1.3px;color:#8b9d96;margin-bottom:9px}.ad-placeholder{min-height:112px;border:1px dashed #b9c9bc;background:#f5f7f2;border-radius:6px;display:grid;place-items:center;color:#82918c;font-size:13px}.ad-bottom{margin-bottom:72px}@media(max-width:720px){.ad-band{margin-bottom:62px}.ad-placeholder{min-height:96px}}
+/* CalculaMX · bloques de anuncios (Google AdSense) */
+.ad-band { margin: 40px auto; text-align: center; }
+.ad-band > span {
+  display: block;
+  font: 10px 'DM Mono', monospace;
+  letter-spacing: 1.3px;
+  color: #93a79f;
+  margin-bottom: 8px;
+}
+.ad-band ins.adsbygoogle { display: block; }
+.ad-placeholder {
+  min-height: 110px;
+  border: 1px dashed var(--line-strong, #cdd8cd);
+  background: #f5f7f2;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  color: #8a998f;
+  font-size: 13px;
+  padding: 12px;
+}
+@media (max-width: 560px) {
+  .ad-band { margin: 28px auto; }
+  .ad-placeholder { min-height: 92px; }
+}
