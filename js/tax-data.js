@@ -142,6 +142,19 @@ const FISCAL = {
     const sbc = Math.min(Math.max(0, sbcMensual), topeMes);
     const excedente = Math.max(0, sbc - 3 * umaMes);
     return excedente * 0.004 + sbc * (0.0025 + 0.00375 + 0.00625 + 0.01125);
+  },
+
+  /* Retención completa de un sueldo MENSUAL: ISR (con subsidio) + IMSS
+     opcional. Único punto de cálculo — lo usan la calculadora de ISR y la
+     tabla de referencia de sueldo neto, para que nunca se desalineen. */
+  retencionMensual(bruto, conImss) {
+    const isrCausado = this.isr(bruto, DATOS_FISCALES.tarifaMensual);
+    const subsidio = this.subsidio(bruto, 'mensual');
+    const isrRetener = Math.max(0, isrCausado - subsidio);
+    const subsidioEfectivo = subsidio > isrCausado ? subsidio - isrCausado : 0;
+    const imss = conImss ? this.imssMensual(bruto * 1.0452) : 0;
+    const neto = bruto - isrRetener - imss + subsidioEfectivo;
+    return { isrCausado, subsidio, isrRetener, subsidioEfectivo, imss, neto };
   }
 };
 
