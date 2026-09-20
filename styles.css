@@ -174,7 +174,7 @@ a:hover { color: var(--green); }
 .section-head { max-width: 40rem; margin-bottom: 28px; }
 .section-head p { color: var(--muted); margin: 8px 0 0; }
 
-.tool-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
 .tool-card {
   background: var(--surface); border: 1px solid var(--line);
   border-radius: var(--radius); padding: 24px;
@@ -232,6 +232,12 @@ a:hover { color: var(--green); }
 .breakdown td { padding: 9px 2px; border-bottom: 1px solid var(--line); font-size: .92rem; }
 .breakdown td:last-child { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .breakdown tr.strong td { font-weight: 700; border-top: 2px solid var(--line-strong); border-bottom: 0; padding-top: 12px; }
+.breakdown tr.section td {
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .8px;
+  text-transform: uppercase; color: var(--green); border-bottom: 0;
+  padding: 16px 2px 4px;
+}
+.breakdown tr.section:first-child td { padding-top: 2px; }
 .breakdown .neg { color: var(--coral); }
 .breakdown .pos { color: var(--green-strong); }
 

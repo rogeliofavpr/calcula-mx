@@ -33,6 +33,27 @@ const DATOS_FISCALES = {
   diasAguinaldoLey: 15,          /* LFT art. 87 */
   diasExentosAguinaldo: 30,      /* LISR art. 93, fr. XIV: 30 × UMA diaria */
 
+  /* Prima vacacional mínima (LFT art. 80): 25% del salario de los días de vacaciones. */
+  primaVacacionalMinima: 0.25,
+
+  /* Prima de antigüedad (LFT art. 162): 12 días de salario por año de
+     servicio. El salario que se usa para calcularla se topa a 2 veces
+     el salario mínimo general diario cuando el salario del trabajador
+     lo excede. */
+  diasPrimaAntiguedadPorAnio: 12,
+  primaAntiguedadToleMultiploSM: 2,
+
+  /* Indemnización constitucional por despido injustificado (LFT art. 48):
+     3 meses de salario (90 días) + 20 días de salario por cada año de
+     servicio (LFT art. 50, fr. II, sólo relación por tiempo indeterminado). */
+  diasIndemnizacionConstitucional: 90,
+  diasPorAnioDespidoInjustificado: 20,
+
+  /* Exención de ISR para prima de antigüedad, indemnizaciones y otros
+     pagos por separación (LISR art. 93, fr. XIII): 90 veces la UMA
+     diaria por cada año de servicio. */
+  umaExentaPorAnioSeparacion: 90,
+
   /* Subsidio para el empleo 2026 (esquema mensual vigente desde 01/05/2024).
      Monto fijo mensual (feb–dic; enero tuvo cuota transitoria de $536.21)
      aplicable cuando el ingreso mensual gravable no rebasa el tope.
@@ -155,6 +176,28 @@ const FISCAL = {
     const imss = conImss ? this.imssMensual(bruto * 1.0452) : 0;
     const neto = bruto - isrRetener - imss + subsidioEfectivo;
     return { isrCausado, subsidio, isrRetener, subsidioEfectivo, imss, neto };
+  },
+
+  /* ISR de un pago extraordinario (aguinaldo, prima de antigüedad,
+     indemnización, etc.) sobre su parte gravada, por el método de tasa
+     efectiva incremental del art. 174 del Reglamento de la LISR:
+     se suma el monto gravado al sueldo ordinario del mes, se calcula la
+     diferencia de ISR y esa diferencia entre el monto gravado da la tasa. */
+  isrPagoExtraordinario(sueldoMensualOrdinario, montoGravado) {
+    if (!(montoGravado > 0)) return { tasa: 0, isr: 0 };
+    const isrOrdinario = this.isr(sueldoMensualOrdinario, DATOS_FISCALES.tarifaMensual);
+    const isrConExtra = this.isr(sueldoMensualOrdinario + montoGravado, DATOS_FISCALES.tarifaMensual);
+    const tasa = (isrConExtra - isrOrdinario) / montoGravado;
+    return { tasa, isr: montoGravado * tasa };
+  },
+
+  /* Días de vacaciones según la tabla del art. 76 LFT (reforma "vacaciones
+     dignas", vigente desde 2023), para el año de servicio en curso
+     (1 = primer año). */
+  diasVacacionesLFT(anioDeServicio) {
+    const n = Math.max(1, Math.floor(anioDeServicio));
+    if (n <= 4) return 10 + 2 * n;           /* 1→12, 2→14, 3→16, 4→18 */
+    return 20 + 2 * Math.floor((n - 5) / 5); /* 5-9→20, 10-14→22, 15-19→24... */
   }
 };
 
