@@ -30,10 +30,8 @@
     var gravado = Math.max(0, bruto - exento);
 
     /* ISR de la parte gravada — método del art. 174 RLISR. */
-    var isrOrdinario = F.isr(sueldoMensual, D.tarifaMensual);
-    var isrConAgui = F.isr(sueldoMensual + gravado, D.tarifaMensual);
-    var tasa = gravado > 0 ? (isrConAgui - isrOrdinario) / gravado : 0;
-    var isrAguinaldo = gravado * tasa;
+    var extra = F.isrPagoExtraordinario(sueldoMensual, gravado);
+    var tasa = extra.tasa, isrAguinaldo = extra.isr;
     var neto = bruto - isrAguinaldo;
 
     var rows = '';

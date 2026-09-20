@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de finiquito y liquidación 2026 en México | CalculaMX</title>
+  <meta name="description" content="Calcula tu finiquito: aguinaldo y vacaciones proporcionales, prima vacacional y, si aplica, prima de antigüedad e indemnización por despido injustificado. Con fechas exactas.">
+  <link rel="canonical" href="https://www.calculamx.net/finiquito">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CalculaMX">
+  <meta property="og:title" content="Calculadora de finiquito y liquidación 2026">
+  <meta property="og:description" content="Aguinaldo y vacaciones proporcionales, prima de antigüedad e indemnización si aplica.">
+  <meta property="og:url" content="https://www.calculamx.net/finiquito">
+  <meta property="og:image" content="https://www.calculamx.net/og-image.png">
+  <meta property="og:locale" content="es_MX">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/ads.css">
+  <script defer src="/js/tax-data.js"></script>
+  <script defer src="/js/site.js"></script>
+  <script defer src="/js/calc-finiquito.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculadora de finiquito — CalculaMX",
+    "url": "https://www.calculamx.net/finiquito",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "es-MX",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MXN" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculamx.net/" },
+      { "@type": "ListItem", "position": 2, "name": "Calculadora de finiquito", "item": "https://www.calculamx.net/finiquito" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Qué diferencia hay entre finiquito y liquidación?", "acceptedAnswer": { "@type": "Answer", "text": "El finiquito (aguinaldo y vacaciones proporcionales, prima vacacional) se paga siempre, sin importar por qué terminó la relación laboral. La liquidación (indemnización de 3 meses, 20 días por año) solo se paga cuando hay despido injustificado. La prima de antigüedad se paga en casi todos los casos, salvo renuncia con menos de 15 años de antigüedad." } },
+      { "@type": "Question", "name": "¿Si renuncio tengo derecho a algo?", "acceptedAnswer": { "@type": "Answer", "text": "Sí: siempre te corresponde el finiquito (aguinaldo y vacaciones proporcionales, prima vacacional). La prima de antigüedad solo aplica en renuncia si tienes 15 años o más de servicio. No hay indemnización de 3 meses ni 20 días por año en una renuncia voluntaria." } },
+      { "@type": "Question", "name": "¿El finiquito paga impuestos?", "acceptedAnswer": { "@type": "Answer", "text": "El aguinaldo está exento hasta 30 UMA; la prima de antigüedad y las indemnizaciones están exentas hasta 90 UMA por cada año de servicio. El excedente de esos montos sí causa ISR." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+    <span class="data-chip">DATOS 2026</span>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false">☰</button>
+    <ul id="nav-menu">
+      <li><a href="/isr">ISR</a></li>
+      <li><a href="/aguinaldo">Aguinaldo</a></li>
+      <li><a href="/prestamos">Préstamos</a></li>
+      <li><a href="/finiquito" aria-current="page">Finiquito</a></li>
+      <li><a href="/guias/">Guías</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="breadcrumb"><a href="/">Inicio</a> › Calculadora de finiquito</p>
+  <h1>Calculadora de finiquito y liquidación</h1>
+  <p class="lead" style="color:var(--muted);max-width:42rem;">Calcula lo que te corresponde al terminar una relación laboral: aguinaldo y vacaciones proporcionales, prima vacacional y, si aplica, prima de antigüedad e indemnización por despido injustificado.</p>
+
+  <div class="calc-wrap">
+    <div class="calc-grid">
+      <form class="panel" id="fini-form">
+        <h2>Tus datos</h2>
+        <div class="field">
+          <label for="fini-sueldo">Sueldo mensual bruto</label>
+          <div class="affix">
+            <span>$</span>
+            <input type="text" id="fini-sueldo" inputmode="decimal" placeholder="18,500" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fini-ingreso">Fecha de ingreso</label>
+          <input type="date" id="fini-ingreso">
+        </div>
+        <div class="field">
+          <label for="fini-salida">Fecha de salida (último día trabajado)</label>
+          <input type="date" id="fini-salida">
+        </div>
+        <div class="field">
+          <label for="fini-motivo">Motivo de la salida</label>
+          <select id="fini-motivo">
+            <option value="renuncia">Renuncia voluntaria</option>
+            <option value="injustificado">Despido injustificado</option>
+            <option value="otro">Despido justificado / término de contrato / mutuo acuerdo</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fini-dias-aguinaldo">Días de aguinaldo de tu contrato <span class="hint">— mínimo de ley: 15</span></label>
+          <input type="number" id="fini-dias-aguinaldo" value="15" min="1" max="90" step="1">
+        </div>
+        <div class="field">
+          <label for="fini-vac-tomadas">Días de vacaciones ya disfrutados en tu año en curso <span class="hint">— si no sabes, deja 0</span></label>
+          <input type="number" id="fini-vac-tomadas" value="0" min="0" max="60" step="0.5">
+        </div>
+        <button class="button block" type="submit">Calcular finiquito <span aria-hidden="true">→</span></button>
+      </form>
+
+      <div class="result" id="fini-result">
+        <p class="result-empty">Completa tus datos y presiona <strong>Calcular finiquito</strong>.</p>
+      </div>
+    </div>
+
+    <div class="how">
+      <h2>Cómo calculamos esto</h2>
+      <ul>
+        <li><strong>Aguinaldo proporcional:</strong> días de aguinaldo × (días trabajados en el año calendario ÷ 365), exento hasta 30 UMA.</li>
+        <li><strong>Vacaciones:</strong> según la tabla vigente del art. 76 LFT (reforma de "vacaciones dignas" 2023) según tus años de antigüedad, prorateadas por el tiempo transcurrido desde tu último aniversario laboral, menos lo ya disfrutado.</li>
+        <li><strong>Prima vacacional:</strong> 25% del valor de esas vacaciones (art. 80 LFT).</li>
+        <li><strong>Prima de antigüedad</strong> (art. 162 LFT): 12 días de salario por año, con el salario topado a 2 veces el salario mínimo diario. Aplica siempre que no sea una renuncia con menos de 15 años de antigüedad.</li>
+        <li><strong>Indemnización por despido injustificado</strong> (arts. 48 y 50-II LFT): 90 días de salario + 20 días por cada año de servicio. Solo si el motivo es despido injustificado y el contrato es por tiempo indeterminado.</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="ad-band" aria-label="Espacio publicitario">
+    <span>Publicidad</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000007" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <div class="ad-placeholder">Espacio reservado para Google AdSense</div>
+  </aside>
+
+  <section class="prose">
+    <h2>Finiquito vs. liquidación: no son lo mismo</h2>
+    <p>El <strong>finiquito</strong> se paga siempre que termina una relación laboral, sin importar el motivo: incluye lo que ya generaste y no te han pagado (aguinaldo y vacaciones proporcionales, prima vacacional). La <strong>liquidación</strong> es un pago adicional que solo corresponde cuando el despido es <strong>injustificado</strong>: 3 meses de salario más 20 días por cada año trabajado.</p>
+    <p>La <strong>prima de antigüedad</strong> está en un punto intermedio: se paga en casi cualquier salida (renuncia, despido justificado o injustificado, término de contrato), excepto si renuncias voluntariamente con menos de 15 años de antigüedad.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <details class="faq">
+      <summary>¿Si renuncio tengo derecho a algo?</summary>
+      <p>Sí: siempre te corresponde el finiquito (aguinaldo y vacaciones proporcionales, prima vacacional). La prima de antigüedad solo aplica si tienes 15 años o más de servicio. No hay indemnización de 3 meses ni 20 días por año en una renuncia voluntaria.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Qué pasa si mi contrato es por tiempo u obra determinada?</summary>
+      <p>El cálculo de los 20 días por año (art. 50-II) es para contratos por tiempo indeterminado. En contratos por tiempo u obra determinada la indemnización por despido injustificado se calcula distinto (por ejemplo, los salarios que faltaren del contrato, con tope de un año). Esta calculadora no cubre ese caso específico: consulta a un abogado laboral.</p>
+    </details>
+    <details class="faq">
+      <summary>¿El finiquito paga impuestos?</summary>
+      <p>El aguinaldo está exento hasta 30 UMA; la prima de antigüedad y las indemnizaciones están exentas hasta 90 UMA por cada año de servicio. El excedente de esos montos sí causa ISR, que estimamos con el mismo método de tasa incremental que usa el SAT.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Qué no incluye esta calculadora?</summary>
+      <p>Días de sueldo ya trabajados y no pagados, PTU (reparto de utilidades), horas extra, comisiones pendientes, ni el caso de contratos por tiempo/obra determinada. Para un finiquito real, pide el desglose por escrito a RH y, si tienes dudas, acude a la PROFEDET (asesoría gratuita).</p>
+    </details>
+
+    <p class="mt"><a href="/aguinaldo">También puedes usar la calculadora de aguinaldo →</a></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+        <p>Calculadoras fiscales y financieras para México. Herramientas educativas; no constituyen asesoría fiscal ni financiera.</p>
+      </div>
+      <div><h4>Calculadoras</h4><a href="/isr">ISR</a><a href="/aguinaldo">Aguinaldo</a><a href="/prestamos">Préstamos</a><a href="/finiquito">Finiquito</a></div>
+      <div><h4>Recursos</h4><a href="/guias/">Guías</a><a href="/sueldo-neto">Sueldo neto</a><a href="/guias/tabla-isr-2026">Tabla ISR 2026</a><a href="/acerca">Acerca de</a></div>
+      <div><h4>Legal</h4><a href="/privacidad">Aviso de privacidad</a><a href="/terminos">Términos de uso</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> CalculaMX · www.calculamx.net</span>
+      <span>Datos fiscales revisados en 2026</span>
+    </div>
+  </div>
+</footer>
+
+<div class="consent" hidden>
+  <p>Usamos cookies propias y de Google (AdSense y Analytics) para mostrar publicidad y medir el tráfico. Consulta el <a href="/privacidad">aviso de privacidad</a>.</p>
+  <div class="actions"><button data-reject>Rechazar</button><button data-accept>Aceptar</button></div>
+</div>
+
+</body>
+</html>
