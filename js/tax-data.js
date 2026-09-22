@@ -82,6 +82,23 @@ const DATOS_FISCALES = {
     bachillerato: 24500
   },
 
+  /* -----------------------------------------------------------------------
+     RESICO — Régimen Simplificado de Confianza, personas físicas
+     (LISR art. 113-E, Anexo 8 RMF 2026, DOF 28/12/2025). Sin cambios
+     respecto a 2025. A diferencia de la tarifa de sueldos, aquí la tasa
+     es FIJA sobre el 100% del ingreso del renglón (no es marginal).
+     Filas: [límite inferior, límite superior, tasa %]
+     ----------------------------------------------------------------------- */
+  resicoMensual: [
+    [0.01,      25000,     1.00],
+    [25000.01,  50000,     1.10],
+    [50000.01,  83333.33,  1.50],
+    [83333.34,  208333.33, 2.00],
+    [208333.34, 291666.67, 2.50]
+  ],
+  resicoTopeAnual: 3500000,          /* límite de ingresos para permanecer en RESICO */
+  resicoRetencionISR: 0.0125,        /* retención que aplica una persona moral al pagarte (1.25%) */
+
   /* Subsidio para el empleo 2026 (esquema mensual vigente desde 01/05/2024).
      Monto fijo mensual (feb–dic; enero tuvo cuota transitoria de $536.21)
      aplicable cuando el ingreso mensual gravable no rebasa el tope.
@@ -226,6 +243,17 @@ const FISCAL = {
     const n = Math.max(1, Math.floor(anioDeServicio));
     if (n <= 4) return 10 + 2 * n;           /* 1→12, 2→14, 3→16, 4→18 */
     return 20 + 2 * Math.floor((n - 5) / 5); /* 5-9→20, 10-14→22, 15-19→24... */
+  },
+
+  /* Tasa de ISR RESICO aplicable a un ingreso MENSUAL (fija, no marginal:
+     se aplica al 100% del ingreso, no solo al excedente del renglón). */
+  resicoTasa(ingresoMensual) {
+    if (!(ingresoMensual > 0)) return 0;
+    const tabla = DATOS_FISCALES.resicoMensual;
+    for (let i = 0; i < tabla.length; i++) {
+      if (ingresoMensual >= tabla[i][0] && ingresoMensual <= tabla[i][1]) return tabla[i][2];
+    }
+    return tabla[tabla.length - 1][2]; /* por si rebasa el tope (ya no debería estar en RESICO) */
   }
 };
 
