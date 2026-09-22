@@ -4,9 +4,20 @@
 (function () {
   'use strict';
 
-  /* ---------- IDs a reemplazar cuando estén disponibles ---------- */
-  var ADSENSE_PUB_ID = 'ca-pub-XXXXXXXXXXXXXXXX';   /* AdSense: ca-pub-… (pendiente) */
-  var GA4_ID         = 'G-HQWK5N6623';               /* Google Analytics 4 */
+  var GA4_ID = 'G-HQWK5N6623'; /* Google Analytics 4 */
+
+  /* ---------- Anuncios (Google AdSense) ----------
+     El script de AdSense va directo en el <head> de cada página (lo pide
+     Google para verificar el sitio y para que Auto ads funcione sin
+     depender de un clic de consentimiento). Aquí solo "activamos" los
+     bloques de anuncio manuales (<ins class="adsbygoogle">) que ya tengan
+     un data-ad-slot real — los que siguen con el marcador "0000000000..."
+     se ignoran hasta que se reemplacen por el ID real del bloque. */
+  document.querySelectorAll('ins.adsbygoogle').forEach(function (ins) {
+    var slot = ins.getAttribute('data-ad-slot') || '';
+    if (/^0+$/.test(slot)) return; /* marcador sin reemplazar */
+    try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+  });
 
   /* ---------- Año dinámico ---------- */
   document.querySelectorAll('[data-year]').forEach(function (el) {
@@ -23,7 +34,7 @@
     });
   }
 
-  /* ---------- Consentimiento (cookies de anuncios y analítica) ---------- */
+  /* ---------- Consentimiento (solo Google Analytics) ---------- */
   var CONSENT_KEY = 'calculamx_consent_v1';
 
   function consent() {
@@ -31,7 +42,8 @@
   }
 
   function loadGA4() {
-    if (GA4_ID.indexOf('X') !== -1) return;
+    if (window.__ga4Loaded || GA4_ID.indexOf('X') !== -1) return;
+    window.__ga4Loaded = true;
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
@@ -42,28 +54,9 @@
     window.gtag('config', GA4_ID, { anonymize_ip: true });
   }
 
-  function loadAdSense() {
-    if (ADSENSE_PUB_ID.indexOf('X') !== -1) return;
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + ADSENSE_PUB_ID;
-    s.crossOrigin = 'anonymous';
-    document.head.appendChild(s);
-    document.querySelectorAll('ins.adsbygoogle').forEach(function () {
-      try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
-    });
-  }
-
-  function enableThirdParty() {
-    if (window.__thirdPartyLoaded) return;
-    window.__thirdPartyLoaded = true;
-    loadGA4();
-    loadAdSense();
-  }
-
   var banner = document.querySelector('.consent');
   if (consent() === 'yes') {
-    enableThirdParty();
+    loadGA4();
   } else if (consent() === null && banner) {
     banner.hidden = false;
     var accept = banner.querySelector('[data-accept]');
@@ -71,7 +64,7 @@
     if (accept) accept.addEventListener('click', function () {
       try { localStorage.setItem(CONSENT_KEY, 'yes'); } catch (e) {}
       banner.hidden = true;
-      enableThirdParty();
+      loadGA4();
     });
     if (reject) reject.addEventListener('click', function () {
       try { localStorage.setItem(CONSENT_KEY, 'no'); } catch (e) {}
