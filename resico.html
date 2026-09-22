@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6755325201030636"
+     crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora RESICO 2026 — ISR por honorarios (personas físicas) | CalculaMX</title>
+  <meta name="description" content="Calcula tu ISR mensual en RESICO (Régimen Simplificado de Confianza) por honorarios o servicios profesionales: tasa fija según tabla 2026, retención de clientes e IVA.">
+  <link rel="canonical" href="https://www.calculamx.net/resico">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CalculaMX">
+  <meta property="og:title" content="Calculadora RESICO 2026 — ISR por honorarios">
+  <meta property="og:description" content="Tasa fija según tabla 2026, retención de clientes e IVA.">
+  <meta property="og:url" content="https://www.calculamx.net/resico">
+  <meta property="og:image" content="https://www.calculamx.net/og-image.png">
+  <meta property="og:locale" content="es_MX">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/ads.css">
+  <script defer src="/js/tax-data.js"></script>
+  <script defer src="/js/site.js"></script>
+  <script defer src="/js/calc-resico.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculadora RESICO — CalculaMX",
+    "url": "https://www.calculamx.net/resico",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "es-MX",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MXN" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculamx.net/" },
+      { "@type": "ListItem", "position": 2, "name": "RESICO", "item": "https://www.calculamx.net/resico" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Quién puede tributar en RESICO?", "acceptedAnswer": { "@type": "Answer", "text": "Personas físicas con actividad empresarial, honorarios (servicios profesionales) o arrendamiento, cuyos ingresos totales del año no superen 3.5 millones de pesos." } },
+      { "@type": "Question", "name": "¿RESICO permite deducir gastos?", "acceptedAnswer": { "@type": "Answer", "text": "No. A cambio de tasas de ISR muy bajas (1% a 2.5%), RESICO no permite deducir gastos operativos; el impuesto se calcula sobre el 100% del ingreso cobrado." } },
+      { "@type": "Question", "name": "¿Qué pasa si facturo a una empresa?", "acceptedAnswer": { "@type": "Answer", "text": "Si tu cliente es una persona moral (empresa), debe retenerte el 1.25% de ISR sobre el monto facturado. Esa retención se resta del ISR que te toca pagar en tu declaración mensual." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+    <span class="data-chip">DATOS 2026</span>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false">☰</button>
+    <ul id="nav-menu">
+      <li><a href="/isr">ISR</a></li>
+      <li><a href="/aguinaldo">Aguinaldo</a></li>
+      <li><a href="/prestamos">Préstamos</a></li>
+      <li><a href="/finiquito">Finiquito</a></li>
+      <li><a href="/guias/">Guías</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="breadcrumb"><a href="/">Inicio</a> › Calculadora RESICO</p>
+  <h1>Calculadora RESICO (honorarios)</h1>
+  <p class="lead" style="color:var(--muted);max-width:42rem;">Calcula tu ISR mensual si facturas por honorarios o servicios profesionales en el Régimen Simplificado de Confianza (RESICO), con tasa fija según tu nivel de ingresos.</p>
+
+  <div class="calc-wrap">
+    <div class="calc-grid">
+      <form class="panel" id="resico-form">
+        <h2>Tus datos</h2>
+        <div class="field">
+          <label for="resico-ingreso">Ingresos cobrados este mes <span class="hint">— sin IVA</span></label>
+          <div class="affix">
+            <span>$</span>
+            <input type="text" id="resico-ingreso" inputmode="decimal" placeholder="35,000" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+        <div class="field field-check">
+          <input type="checkbox" id="resico-persona-moral">
+          <label for="resico-persona-moral">Facturo a una empresa (persona moral) — me retiene 1.25% de ISR</label>
+        </div>
+        <div class="field field-check">
+          <input type="checkbox" id="resico-iva" checked>
+          <label for="resico-iva">Cobro IVA (16%) en mis facturas</label>
+        </div>
+        <button class="button block" type="submit">Calcular ISR RESICO <span aria-hidden="true">→</span></button>
+      </form>
+
+      <div class="result" id="resico-result">
+        <p class="result-empty">Completa tus datos y presiona <strong>Calcular ISR RESICO</strong>.</p>
+      </div>
+    </div>
+
+    <div class="how">
+      <h2>Cómo calculamos esto</h2>
+      <ul>
+        <li>RESICO usa una <strong>tasa fija</strong> según tu ingreso mensual (de 1.00% a 2.50%), aplicada al <strong>100% del ingreso</strong> — no es un cálculo marginal como el ISR de sueldos, y no hay deducciones de gastos.</li>
+        <li>Si facturas a una empresa (persona moral), te debe retener <strong>1.25%</strong> de ISR; esa retención se resta de lo que te toca pagar.</li>
+        <li>El límite para permanecer en RESICO es de <strong>$3,500,000</strong> de ingresos en el año; si lo superas, pasas al régimen general a partir del mes siguiente.</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="ad-band" aria-label="Espacio publicitario">
+    <span>Publicidad</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6755325201030636" data-ad-slot="0000000009" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <div class="ad-placeholder">Espacio reservado para Google AdSense</div>
+  </aside>
+
+  <section class="prose">
+    <h2>Tabla de tasas RESICO 2026 (mensual)</h2>
+    <table>
+      <thead><tr><th>Ingreso mensual</th><th>Tasa de ISR</th></tr></thead>
+      <tbody>
+        <tr><td>Hasta $25,000</td><td>1.00%</td></tr>
+        <tr><td>$25,000.01 a $50,000</td><td>1.10%</td></tr>
+        <tr><td>$50,000.01 a $83,333.33</td><td>1.50%</td></tr>
+        <tr><td>$83,333.34 a $208,333.33</td><td>2.00%</td></tr>
+        <tr><td>$208,333.34 a $291,666.67</td><td>2.50%</td></tr>
+      </tbody>
+    </table>
+    <p class="callout">A diferencia de la tarifa de sueldos, aquí <strong>no se resta el límite inferior</strong>: la tasa del renglón se aplica directo sobre el 100% de tu ingreso del mes.</p>
+
+    <h2>¿Quién puede tributar en RESICO?</h2>
+    <p>Personas físicas con <strong>actividad empresarial, honorarios (servicios profesionales) o arrendamiento</strong>, con ingresos totales del año que no superen $3,500,000. No aplica si recibes ingresos como socio, accionista o integrante de personas morales, entre otras excepciones específicas de la ley.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <details class="faq">
+      <summary>¿RESICO permite deducir gastos?</summary>
+      <p>No. A cambio de tasas muy bajas, no puedes deducir gastos operativos: el impuesto se calcula sobre el 100% del ingreso cobrado.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Qué pasa si facturo a una empresa?</summary>
+      <p>Debe retenerte 1.25% de ISR sobre el monto facturado. Esa retención se resta del ISR que te toca pagar en tu declaración mensual; si en algún mes la retención es mayor al ISR causado, el excedente se puede acreditar en meses siguientes.</p>
+    </details>
+    <details class="faq">
+      <summary>¿RESICO me exime de cobrar IVA?</summary>
+      <p>No. RESICO es un régimen de ISR; el IVA es un impuesto aparte. La mayoría de los servicios profesionales causan IVA del 16%, salvo actividades específicamente exentas.</p>
+    </details>
+
+    <p class="mt"><a href="/declaracion-anual">También puedes revisar tu declaración anual →</a></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+        <p>Calculadoras fiscales y financieras para México. Herramientas educativas; no constituyen asesoría fiscal ni financiera.</p>
+      </div>
+      <div><h4>Calculadoras</h4><a href="/isr">ISR</a><a href="/aguinaldo">Aguinaldo</a><a href="/prestamos">Préstamos</a><a href="/finiquito">Finiquito</a><a href="/declaracion-anual">Declaración anual</a><a href="/resico">RESICO</a></div>
+      <div><h4>Recursos</h4><a href="/guias/">Guías</a><a href="/sueldo-neto">Sueldo neto</a><a href="/guias/tabla-isr-2026">Tabla ISR 2026</a><a href="/acerca">Acerca de</a></div>
+      <div><h4>Legal</h4><a href="/privacidad">Aviso de privacidad</a><a href="/terminos">Términos de uso</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> CalculaMX · www.calculamx.net</span>
+      <span>Datos fiscales revisados en 2026</span>
+    </div>
+  </div>
+</footer>
+
+<div class="consent" hidden>
+  <p>Este sitio muestra anuncios de Google (AdSense), que usa cookies. Si aceptas, también medimos el tráfico con Google Analytics. Consulta el <a href="/privacidad">aviso de privacidad</a>.</p>
+  <div class="actions"><button data-reject>Rechazar</button><button data-accept>Aceptar</button></div>
+</div>
+
+</body>
+</html>
