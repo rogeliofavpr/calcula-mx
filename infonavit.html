@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6755325201030636"
+     crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulador de crédito Infonavit 2026 — mensualidad y aportación patronal | CalculaMX</title>
+  <meta name="description" content="Simula el pago mensual de tu crédito Infonavit, la tabla de amortización y cuánto adelantas tu crédito aplicando la aportación patronal (5%) a capital.">
+  <link rel="canonical" href="https://www.calculamx.net/infonavit">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CalculaMX">
+  <meta property="og:title" content="Simulador de crédito Infonavit 2026">
+  <meta property="og:description" content="Mensualidad, tabla de amortización y efecto de la aportación patronal.">
+  <meta property="og:url" content="https://www.calculamx.net/infonavit">
+  <meta property="og:image" content="https://www.calculamx.net/og-image.png">
+  <meta property="og:locale" content="es_MX">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/ads.css">
+  <script defer src="/js/tax-data.js"></script>
+  <script defer src="/js/site.js"></script>
+  <script defer src="/js/calc-infonavit.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Simulador de crédito Infonavit — CalculaMX",
+    "url": "https://www.calculamx.net/infonavit",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "es-MX",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MXN" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculamx.net/" },
+      { "@type": "ListItem", "position": 2, "name": "Simulador Infonavit", "item": "https://www.calculamx.net/infonavit" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Dónde consigo el monto y la tasa reales de mi crédito Infonavit?", "acceptedAnswer": { "@type": "Answer", "text": "En el portal Mi Cuenta Infonavit, con tu NSS y contraseña. Ahí Infonavit te muestra el monto que te prestaría, la tasa aplicable y el plazo según tu edad, salario y saldo de tu subcuenta de vivienda — es un cálculo que depende de un puntaje interno que no es público." } },
+      { "@type": "Question", "name": "¿Qué es la aportación patronal y cómo afecta mi crédito?", "acceptedAnswer": { "@type": "Answer", "text": "Tu empleador deposita el 5% de tu salario a tu subcuenta de vivienda cada bimestre. Si tienes un crédito Infonavit vigente, ese dinero se aplica directo a reducir el capital de tu deuda, lo que acorta el plazo en vez de bajar tu mensualidad." } },
+      { "@type": "Question", "name": "¿La tasa de interés es igual para todos?", "acceptedAnswer": { "@type": "Answer", "text": "No. Infonavit aplica tasas distintas según tu nivel de ingreso (en veces el salario mínimo), generalmente más bajas para salarios menores. La tasa exacta te la confirma Infonavit al momento de precalificar." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+    <span class="data-chip">DATOS 2026</span>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false">☰</button>
+    <ul id="nav-menu">
+      <li><a href="/isr">ISR</a></li>
+      <li><a href="/aguinaldo">Aguinaldo</a></li>
+      <li><a href="/prestamos">Préstamos</a></li>
+      <li><a href="/finiquito">Finiquito</a></li>
+      <li><a href="/guias/">Guías</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="breadcrumb"><a href="/">Inicio</a> › Simulador Infonavit</p>
+  <h1>Simulador de crédito Infonavit</h1>
+  <p class="lead" style="color:var(--muted);max-width:42rem;">Con el monto y la tasa que te dio Infonavit, calcula tu mensualidad, la tabla de amortización y cuánto adelantas tu crédito con la aportación patronal.</p>
+
+  <div class="callout" style="max-width:42rem;">Infonavit calcula el monto y la tasa que te ofrece con un puntaje interno (edad, salario, saldo de tu subcuenta) que no es público. Consulta tus datos reales en <strong>Mi Cuenta Infonavit</strong> y úsalos aquí para simular tu pago.</div>
+
+  <div class="calc-wrap">
+    <div class="calc-grid">
+      <form class="panel" id="info-form">
+        <h2>Datos de tu crédito</h2>
+        <div class="field">
+          <label for="info-monto">Monto del crédito <span class="hint">— de tu precalificación Infonavit</span></label>
+          <div class="affix">
+            <span>$</span>
+            <input type="text" id="info-monto" inputmode="decimal" placeholder="600,000" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="info-tasa">Tasa de interés anual <span class="hint">— orientativo: 4% a 10.45% según tu salario</span></label>
+          <div class="affix">
+            <input type="text" id="info-tasa" inputmode="decimal" placeholder="8" autocomplete="off">
+            <span>%</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="info-plazo">Plazo (años)</label>
+          <input type="number" id="info-plazo" placeholder="20" min="1" max="30" step="1">
+        </div>
+        <div class="field">
+          <label for="info-sueldo">Tu sueldo mensual <span class="hint">— opcional, para ver % de tu sueldo y la aportación patronal</span></label>
+          <div class="affix">
+            <span>$</span>
+            <input type="text" id="info-sueldo" inputmode="decimal" placeholder="15,000" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+        <div class="field field-check">
+          <input type="checkbox" id="info-aportacion">
+          <label for="info-aportacion">Aplicar la aportación patronal (5% de mi sueldo) como abono a capital</label>
+        </div>
+        <button class="button block" type="submit">Simular crédito <span aria-hidden="true">→</span></button>
+      </form>
+
+      <div class="result" id="info-result">
+        <p class="result-empty">Completa los datos de tu crédito y presiona <strong>Simular crédito</strong>.</p>
+      </div>
+    </div>
+
+    <div id="info-tabla" class="prose"></div>
+
+    <div class="how">
+      <h2>Cómo calculamos esto</h2>
+      <ul>
+        <li>La mensualidad se calcula con <strong>amortización tradicional</strong> (como en <a href="/prestamos">nuestro simulador de préstamo</a>): pago fijo, más capital y menos interés con cada mes que pasa.</li>
+        <li>Si activas la aportación patronal, cada mes se aplica un <strong>5% de tu sueldo directo a capital</strong>, además de tu pago normal — eso <strong>acorta el plazo</strong>, no reduce tu mensualidad.</li>
+        <li>Los créditos otorgados desde mayo de 2024 no tienen cuota de administración ni gastos financieros de operación.</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="ad-band" aria-label="Espacio publicitario">
+    <span>Publicidad</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6755325201030636" data-ad-slot="0000000010" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <div class="ad-placeholder">Espacio reservado para Google AdSense</div>
+  </aside>
+
+  <section class="prose">
+    <h2>¿Cómo se determina mi tasa y mi monto?</h2>
+    <p>Infonavit fija una <strong>tasa de interés fija</strong> durante toda la vida del crédito, más baja mientras menor sea tu ingreso. Como referencia orientativa (no oficial ni exacta — confírmala en tu precalificación):</p>
+    <table>
+      <thead><tr><th>Ingreso</th><th>Tasa orientativa</th></tr></thead>
+      <tbody>
+        <tr><td>Hasta 1.5 veces el salario mínimo</td><td>~4.0%</td></tr>
+        <tr><td>1.5 a 2.0 veces el salario mínimo</td><td>~6.0%</td></tr>
+        <tr><td>2.0 a 3.0 veces el salario mínimo</td><td>~8.0%</td></tr>
+        <tr><td>Salarios más altos</td><td>hasta ~10.45%</td></tr>
+      </tbody>
+    </table>
+    <p>El <strong>monto</strong> que te prestan depende de tu edad (a menor edad, más años te quedan para pagar, así que califica para un crédito mayor), tu salario, tu antigüedad laboral y el saldo de tu subcuenta de vivienda — es un puntaje interno de Infonavit, no una fórmula pública.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <details class="faq">
+      <summary>¿Dónde consigo el monto y la tasa reales de mi crédito?</summary>
+      <p>En el portal <strong>Mi Cuenta Infonavit</strong>, con tu NSS y contraseña. Ahí te precalifican con tus datos reales.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Qué es la aportación patronal?</summary>
+      <p>Tu empleador deposita el 5% de tu salario a tu subcuenta de vivienda cada bimestre. Si tienes un crédito vigente, ese dinero se aplica directo a tu capital, acortando el plazo.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Puedo combinar mi crédito Infonavit con un crédito bancario?</summary>
+      <p>Sí, existen productos como Cofinavit o Infonavit Más Crédito que combinan tu crédito Infonavit con un crédito bancario adicional. Esta calculadora simula solo la parte de amortización tradicional; para productos combinados consulta directamente con Infonavit.</p>
+    </details>
+
+    <p class="mt"><a href="/prestamos">También puedes simular un préstamo bancario tradicional →</a></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+        <p>Calculadoras fiscales y financieras para México. Herramientas educativas; no constituyen asesoría fiscal ni financiera.</p>
+      </div>
+      <div><h4>Calculadoras</h4><a href="/isr">ISR</a><a href="/aguinaldo">Aguinaldo</a><a href="/prestamos">Préstamos</a><a href="/finiquito">Finiquito</a><a href="/declaracion-anual">Declaración anual</a><a href="/resico">RESICO</a><a href="/infonavit">Infonavit</a></div>
+      <div><h4>Recursos</h4><a href="/guias/">Guías</a><a href="/sueldo-neto">Sueldo neto</a><a href="/guias/tabla-isr-2026">Tabla ISR 2026</a><a href="/acerca">Acerca de</a></div>
+      <div><h4>Legal</h4><a href="/privacidad">Aviso de privacidad</a><a href="/terminos">Términos de uso</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> CalculaMX · www.calculamx.net</span>
+      <span>Datos fiscales revisados en 2026</span>
+    </div>
+  </div>
+</footer>
+
+<div class="consent" hidden>
+  <p>Este sitio muestra anuncios de Google (AdSense), que usa cookies. Si aceptas, también medimos el tráfico con Google Analytics. Consulta el <a href="/privacidad">aviso de privacidad</a>.</p>
+  <div class="actions"><button data-reject>Rechazar</button><button data-accept>Aceptar</button></div>
+</div>
+
+</body>
+</html>
