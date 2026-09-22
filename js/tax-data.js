@@ -54,6 +54,34 @@ const DATOS_FISCALES = {
      diaria por cada año de servicio. */
   umaExentaPorAnioSeparacion: 90,
 
+  /* -----------------------------------------------------------------------
+     Deducciones personales — declaración anual (LISR art. 151).
+     ----------------------------------------------------------------------- */
+  deduccionesPersonales: {
+    /* Tope de la "canasta general" (médicos, dentales, hospitalarios,
+       seguros de gastos médicos, funerarios, transporte escolar
+       obligatorio, intereses reales hipotecarios): el MENOR entre... */
+    topeUMAsAnuales: 5,
+    topePorcentajeIngreso: 0.15,
+    /* Donativos: tope independiente, no compite por la canasta general. */
+    donativosPorcentajeIngreso: 0.07,
+    /* Aportaciones voluntarias de retiro (Afore/PPR, art. 151-V): tope
+       independiente, el menor entre estas dos referencias. */
+    aportacionesRetiroPorcentajeIngreso: 0.10,
+    aportacionesRetiroTopeUMAsAnuales: 5
+  },
+
+  /* Colegiaturas (estímulo del Decreto presidencial, no del art. 151):
+     tope anual POR ESTUDIANTE según su nivel, independiente de la
+     canasta general de deducciones. Montos fijos desde 2011. */
+  colegiaturas: {
+    preescolar: 14200,
+    primaria: 12900,
+    secundaria: 19900,
+    profesionalTecnico: 17100,
+    bachillerato: 24500
+  },
+
   /* Subsidio para el empleo 2026 (esquema mensual vigente desde 01/05/2024).
      Monto fijo mensual (feb–dic; enero tuvo cuota transitoria de $536.21)
      aplicable cuando el ingreso mensual gravable no rebasa el tope.

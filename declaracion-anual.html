@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6755325201030636"
+     crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de declaración anual 2026 (deducciones personales) | CalculaMX</title>
+  <meta name="description" content="Calcula tu declaración anual de personas físicas con sueldos: deducciones personales (médicos, colegiaturas, donativos, retiro), su tope y si te resulta saldo a favor o a cargo.">
+  <link rel="canonical" href="https://www.calculamx.net/declaracion-anual">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CalculaMX">
+  <meta property="og:title" content="Calculadora de declaración anual 2026">
+  <meta property="og:description" content="Deducciones personales, su tope, y si te resulta saldo a favor o a cargo.">
+  <meta property="og:url" content="https://www.calculamx.net/declaracion-anual">
+  <meta property="og:image" content="https://www.calculamx.net/og-image.png">
+  <meta property="og:locale" content="es_MX">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/ads.css">
+  <script defer src="/js/tax-data.js"></script>
+  <script defer src="/js/site.js"></script>
+  <script defer src="/js/calc-declaracion.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculadora de declaración anual — CalculaMX",
+    "url": "https://www.calculamx.net/declaracion-anual",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "es-MX",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MXN" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculamx.net/" },
+      { "@type": "ListItem", "position": 2, "name": "Declaración anual", "item": "https://www.calculamx.net/declaracion-anual" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Quién debe presentar declaración anual?", "acceptedAnswer": { "@type": "Answer", "text": "Si solo tuviste un patrón en el año y no vas a deducir gastos, normalmente no estás obligado. Pero si tuviste dos o más patrones en el mismo año, ingresos adicionales, o quieres deducir gastos personales para obtener saldo a favor, sí debes o te conviene presentarla." } },
+      { "@type": "Question", "name": "¿Cuál es el tope de las deducciones personales?", "acceptedAnswer": { "@type": "Answer", "text": "La mayoría de las deducciones (médicos, funerarios, seguros de gastos médicos, transporte escolar, intereses hipotecarios) se topan al menor entre 5 UMA anuales o el 15% de tu ingreso. Colegiaturas, donativos y aportaciones voluntarias de retiro tienen topes independientes." } },
+      { "@type": "Question", "name": "¿Las colegiaturas cuentan dentro del tope general?", "acceptedAnswer": { "@type": "Answer", "text": "No. Las colegiaturas tienen su propio tope por nivel educativo y no compiten con el resto de tus deducciones personales." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+    <span class="data-chip">DATOS 2026</span>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false">☰</button>
+    <ul id="nav-menu">
+      <li><a href="/isr">ISR</a></li>
+      <li><a href="/aguinaldo">Aguinaldo</a></li>
+      <li><a href="/prestamos">Préstamos</a></li>
+      <li><a href="/finiquito">Finiquito</a></li>
+      <li><a href="/guias/">Guías</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="breadcrumb"><a href="/">Inicio</a> › Declaración anual</p>
+  <h1>Calculadora de declaración anual</h1>
+  <p class="lead" style="color:var(--muted);max-width:42rem;">Estima si te resulta saldo a favor o a cargo al presentar tu declaración anual, con tus deducciones personales: gastos médicos, colegiaturas, donativos y aportaciones voluntarias de retiro.</p>
+
+  <div class="calc-wrap">
+    <div class="calc-grid">
+      <form class="panel" id="decl-form">
+        <h2>Ingresos y retenciones</h2>
+        <div class="field">
+          <label for="decl-ingreso">Ingreso gravable del año <span class="hint">— suma de tus recibos de nómina</span></label>
+          <div class="affix">
+            <span>$</span>
+            <input type="text" id="decl-ingreso" inputmode="decimal" placeholder="240,000" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="decl-isr-retenido">ISR retenido durante el año <span class="hint">— de tu constancia de percepciones</span></label>
+          <div class="affix">
+            <span>$</span>
+            <input type="text" id="decl-isr-retenido" inputmode="decimal" placeholder="28,000" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+
+        <h2>Deducciones personales</h2>
+        <div class="field">
+          <label for="decl-gastos-generales">Médicos, dentales, funerarios, seguro de gastos médicos e intereses hipotecarios <span class="hint">— suma total del año</span></label>
+          <div class="affix">
+            <span>$</span>
+            <input type="text" id="decl-gastos-generales" inputmode="decimal" placeholder="0" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="decl-col-nivel1">Colegiatura — estudiante 1 (opcional)</label>
+          <select id="decl-col-nivel1">
+            <option value="">Sin colegiatura</option>
+            <option value="preescolar">Preescolar</option>
+            <option value="primaria">Primaria</option>
+            <option value="secundaria">Secundaria</option>
+            <option value="profesionalTecnico">Profesional técnico</option>
+            <option value="bachillerato">Bachillerato</option>
+          </select>
+          <div class="affix mt" style="margin-top:8px;">
+            <span>$</span>
+            <input type="text" id="decl-col-monto1" inputmode="decimal" placeholder="0" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="decl-col-nivel2">Colegiatura — estudiante 2 (opcional)</label>
+          <select id="decl-col-nivel2">
+            <option value="">Sin colegiatura</option>
+            <option value="preescolar">Preescolar</option>
+            <option value="primaria">Primaria</option>
+            <option value="secundaria">Secundaria</option>
+            <option value="profesionalTecnico">Profesional técnico</option>
+            <option value="bachillerato">Bachillerato</option>
+          </select>
+          <div class="affix mt" style="margin-top:8px;">
+            <span>$</span>
+            <input type="text" id="decl-col-monto2" inputmode="decimal" placeholder="0" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="decl-donativos">Donativos otorgados (opcional)</label>
+          <div class="affix">
+            <span>$</span>
+            <input type="text" id="decl-donativos" inputmode="decimal" placeholder="0" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="decl-aportaciones">Aportaciones voluntarias de retiro — Afore/PPR (opcional)</label>
+          <div class="affix">
+            <span>$</span>
+            <input type="text" id="decl-aportaciones" inputmode="decimal" placeholder="0" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+
+        <button class="button block" type="submit">Calcular declaración <span aria-hidden="true">→</span></button>
+      </form>
+
+      <div class="result" id="decl-result">
+        <p class="result-empty">Completa tus datos y presiona <strong>Calcular declaración</strong>.</p>
+      </div>
+    </div>
+
+    <div class="how">
+      <h2>Cómo calculamos esto</h2>
+      <ul>
+        <li><strong>Canasta general</strong> (médicos, funerarios, seguros de gastos médicos, transporte escolar, intereses hipotecarios): se topa al menor entre 5 UMA anuales o 15% de tu ingreso (art. 151 LISR).</li>
+        <li><strong>Colegiaturas:</strong> tope independiente por nivel educativo y por estudiante (estímulo presidencial, no compite con la canasta general).</li>
+        <li><strong>Donativos:</strong> tope independiente de 7% de tu ingreso (aquí aproximado con el ingreso del mismo año; la ley usa el del ejercicio anterior).</li>
+        <li><strong>Aportaciones voluntarias de retiro:</strong> tope independiente, el menor entre 10% de tu ingreso o 5 UMA anuales.</li>
+        <li>Restamos el total deducible a tu ingreso, calculamos el ISR con la tarifa anual y lo comparamos contra lo que ya te retuvieron.</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="ad-band" aria-label="Espacio publicitario">
+    <span>Publicidad</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6755325201030636" data-ad-slot="0000000008" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <div class="ad-placeholder">Espacio reservado para Google AdSense</div>
+  </aside>
+
+  <section class="prose">
+    <h2>¿Quién debe presentar declaración anual?</h2>
+    <p>Si solo tuviste <strong>un patrón</strong> en el año y no vas a deducir gastos, normalmente no estás obligado — tu patrón ya hizo el ajuste anual por ti. Pero sí te conviene o debes presentarla si:</p>
+    <ul>
+      <li>Tuviste <strong>dos o más patrones</strong> en el mismo año (aunque no fuera al mismo tiempo).</li>
+      <li>Tuviste ingresos adicionales (honorarios, arrendamiento, etc.).</li>
+      <li>Quieres <strong>deducir gastos personales</strong> para obtener saldo a favor.</li>
+      <li>Ganaste más de $400,000 en el año (obligación por tope de ingreso).</li>
+    </ul>
+    <p class="callout">El periodo para presentar la declaración anual de personas físicas es normalmente <strong>abril</strong> del año siguiente, a través del portal del SAT.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <details class="faq">
+      <summary>¿Cuál es el tope de las deducciones personales?</summary>
+      <p>La mayoría (médicos, funerarios, seguros de gastos médicos, transporte escolar, intereses hipotecarios) se topan al menor entre 5 UMA anuales o el 15% de tu ingreso. Colegiaturas, donativos y aportaciones voluntarias de retiro tienen topes independientes, fuera de esa canasta.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Las colegiaturas cuentan dentro del tope general?</summary>
+      <p>No. Tienen su propio tope por nivel educativo y no compiten con el resto de tus deducciones personales.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Necesito factura (CFDI) para deducir estos gastos?</summary>
+      <p>Sí, todos estos gastos requieren un CFDI a tu nombre (con tu RFC) para ser deducibles, y generalmente deben pagarse con medios electrónicos (transferencia, tarjeta), no en efectivo.</p>
+    </details>
+
+    <p class="mt"><a href="/isr">También puedes revisar tu ISR mensual →</a></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+        <p>Calculadoras fiscales y financieras para México. Herramientas educativas; no constituyen asesoría fiscal ni financiera.</p>
+      </div>
+      <div><h4>Calculadoras</h4><a href="/isr">ISR</a><a href="/aguinaldo">Aguinaldo</a><a href="/prestamos">Préstamos</a><a href="/finiquito">Finiquito</a><a href="/declaracion-anual">Declaración anual</a></div>
+      <div><h4>Recursos</h4><a href="/guias/">Guías</a><a href="/sueldo-neto">Sueldo neto</a><a href="/guias/tabla-isr-2026">Tabla ISR 2026</a><a href="/acerca">Acerca de</a></div>
+      <div><h4>Legal</h4><a href="/privacidad">Aviso de privacidad</a><a href="/terminos">Términos de uso</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> CalculaMX · www.calculamx.net</span>
+      <span>Datos fiscales revisados en 2026</span>
+    </div>
+  </div>
+</footer>
+
+<div class="consent" hidden>
+  <p>Este sitio muestra anuncios de Google (AdSense), que usa cookies. Si aceptas, también medimos el tráfico con Google Analytics. Consulta el <a href="/privacidad">aviso de privacidad</a>.</p>
+  <div class="actions"><button data-reject>Rechazar</button><button data-accept>Aceptar</button></div>
+</div>
+
+</body>
+</html>
