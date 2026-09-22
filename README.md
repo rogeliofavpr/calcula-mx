@@ -45,28 +45,36 @@ Las ramas generan un **deployment de preview** con su propia URL para revisar an
 DNS (Hostinger): `www` y apex apuntando a Vercel; `www.calculamx.net` como dominio principal
 (Vercel redirige el apex).
 
-## IDs por reemplazar
+## IDs configurados / pendientes
 
-| Dónde | Marcador | Qué poner |
+| Dónde | Valor | Estado |
 |---|---|---|
-| `js/site.js` → `ADSENSE_PUB_ID` | `ca-pub-XXXXXXXXXXXXXXXX` | Tu ID de editor de AdSense |
-| `js/site.js` → `GA4_ID` | `G-XXXXXXXXXX` | Tu Measurement ID de Google Analytics 4 |
-| Todos los `.html` → `data-ad-client` | `ca-pub-XXXXXXXXXXXXXXXX` | Mismo ID de AdSense |
-| Todos los `.html` → `data-ad-slot` | `0000000000` … `0000000005` | El ID de cada bloque de anuncio que crees en AdSense |
-| `ads.txt` | `pub-XXXXXXXXXXXXXXXX` | Tu ID de editor (sin el `ca-`) |
+| `<head>` de cada página + `data-ad-client` + `ads.txt` | `ca-pub-6755325201030636` | ✅ configurado |
+| `js/site.js` → `GA4_ID` | `G-HQWK5N6623` | ✅ configurado |
+| Todos los `.html` → `data-ad-slot` | `0000000000` … `0000000007` | ⬜ pendiente — reemplazar solo si creas **anuncios manuales** en AdSense (ver abajo) |
 
-Mientras los marcadores tengan `X`, **no se carga ningún script de Google** y los anuncios
-se ven como un recuadro "Espacio reservado". Los scripts sólo cargan tras pulsar "Aceptar"
-en el aviso de cookies.
+### Cómo funcionan los anuncios
 
-### Activar Google AdSense
+El script base de AdSense (`pagead2.googlesyndication.com/...`) se carga **sin condición** en
+el `<head>` de cada página — así lo pide Google para verificar el sitio y para que **Auto
+ads** funcione. Google Analytics, en cambio, solo se carga si la persona acepta el aviso de
+cookies (`js/site.js`).
 
-1. Sitio en línea con contenido real (ya lo tiene) y dominio conectado.
-2. Alta en <https://adsense.google.com> con el dominio `calculamx.net`.
-3. Reemplaza los IDs de la tabla de arriba y haz push.
-4. Crea los bloques de anuncio en AdSense y pega sus `data-ad-slot`.
-5. Solicita la revisión. Tarda de unos días a ~2 semanas.
-6. No hagas clic en tus propios anuncios.
+Dos formas de mostrar anuncios, no son excluyentes:
+
+- **Auto ads** (recomendado para empezar): actívalo en el dashboard de AdSense → "Anuncios"
+  → "Auto ads". Google decide solo dónde poner los anuncios, sin tocar código.
+- **Anuncios manuales**: si en AdSense creas un bloque de anuncio específico, te dará un
+  `data-ad-slot`. Reemplaza el marcador correspondiente (`0000000000`, etc.) en el `.html`
+  de esa página — `js/site.js` ya detecta y activa cualquier bloque con un slot real.
+
+### Estado de la solicitud
+
+1. ✅ Cuenta creada, ID de editor obtenido.
+2. ⬜ Esperando aprobación de Google (de unos días a ~2 semanas).
+3. Mientras revisan, el sitio se ve normal; los anuncios (o los recuadros "Espacio
+   reservado" de los bloques manuales) empiezan a mostrarse al aprobar.
+4. No hagas clic en tus propios anuncios.
 
 ## Actualizar las tablas fiscales (cada enero–febrero)
 
