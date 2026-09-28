@@ -19,6 +19,13 @@
     try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
   });
 
+  /* ---------- Enlaces a postula (herramienta hermana) ----------
+     data-postula="<ubicación>" en cualquier enlace registra de dónde vino el clic. */
+  document.addEventListener('click', function (e) {
+    var enlace = e.target.closest && e.target.closest('[data-postula]');
+    if (enlace && window.CalculaMX) window.CalculaMX.track('clic_postula', { ubicacion: enlace.getAttribute('data-postula') });
+  });
+
   /* ---------- Año dinámico ---------- */
   document.querySelectorAll('[data-year]').forEach(function (el) {
     el.textContent = String(new Date().getFullYear());
