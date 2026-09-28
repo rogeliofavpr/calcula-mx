@@ -8,6 +8,9 @@
   margin-bottom: 8px;
 }
 .ad-band ins.adsbygoogle { display: block; }
+/* Mientras un bloque tenga el ID de ejemplo ("000000000N"), no se muestra nada: ni el recuadro
+   ni la etiqueta "Publicidad". Los anuncios automáticos de AdSense no dependen de estos bloques. */
+.ad-band:has(ins.adsbygoogle[data-ad-slot^="000000000"]) { display: none; }
 .ad-placeholder {
   min-height: 110px;
   border: 1px dashed var(--line-strong, #cdd8cd);
