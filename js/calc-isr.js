@@ -30,18 +30,17 @@
     var isrCausado = F.isr(bruto, tarifa);
     var subsidio = F.subsidio(bruto, periodo);
     var isrRetener = Math.max(0, isrCausado - subsidio);
-    var subsidioEfectivo = subsidio > isrCausado ? subsidio - isrCausado : 0;
 
     var imss = 0;
     if (conImss) {
       var brutoMensual = periodo === 'anual' ? bruto / 12
                         : (periodo === 'quincenal' ? bruto * 2 : bruto);
-      imss = F.imssMensual(brutoMensual * 1.0452);
+      imss = F.imssMensual(brutoMensual * F.factorIntegracionMinimo);
       if (periodo === 'anual') imss *= 12;
       else if (periodo === 'quincenal') imss /= 2;
     }
 
-    var neto = bruto - isrRetener - imss + subsidioEfectivo;
+    var neto = bruto - isrRetener - imss;
     var tasa = (isrRetener / bruto) * 100;
     var pTxt = periodoTexto(periodo);
 
@@ -50,7 +49,6 @@
     rows += fila('ISR según tarifa (art. ' + (periodo === 'anual' ? '152' : '96') + ')', -isrCausado);
     if (subsidio > 0) rows += fila('Subsidio para el empleo', subsidio, 'pos');
     rows += filaFuerte('ISR a retener', -isrRetener);
-    if (subsidioEfectivo > 0) rows += fila('Subsidio entregado en efectivo', subsidioEfectivo, 'pos');
     if (conImss) rows += fila('Cuota IMSS del trabajador (estimada)', -imss);
 
     out.innerHTML =

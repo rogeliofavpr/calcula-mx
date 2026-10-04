@@ -210,6 +210,11 @@ const FISCAL = {
     return excedente * 0.004 + sbc * (0.0025 + 0.00375 + 0.00625 + 0.01125);
   },
 
+  /* Factor de integración mínimo del salario base de cotización (LSS art. 27):
+     1 + (15 días de aguinaldo + 12 días de vacaciones × 25% de prima) ÷ 365,
+     con la tabla de "vacaciones dignas" (12 días el primer año, desde 2023). */
+  factorIntegracionMinimo: 1.0493,
+
   /* Retención completa de un sueldo MENSUAL: ISR (con subsidio) + IMSS
      opcional. Único punto de cálculo — lo usan la calculadora de ISR y la
      tabla de referencia de sueldo neto, para que nunca se desalineen. */
@@ -217,10 +222,11 @@ const FISCAL = {
     const isrCausado = this.isr(bruto, DATOS_FISCALES.tarifaMensual);
     const subsidio = this.subsidio(bruto, 'mensual');
     const isrRetener = Math.max(0, isrCausado - subsidio);
-    const subsidioEfectivo = subsidio > isrCausado ? subsidio - isrCausado : 0;
-    const imss = conImss ? this.imssMensual(bruto * 1.0452) : 0;
-    const neto = bruto - isrRetener - imss + subsidioEfectivo;
-    return { isrCausado, subsidio, isrRetener, subsidioEfectivo, imss, neto };
+    /* Desde mayo de 2024 el subsidio solo se acredita contra el ISR: si es mayor,
+       la diferencia no se entrega en efectivo (Decreto DOF 01/05/2024). */
+    const imss = conImss ? this.imssMensual(bruto * this.factorIntegracionMinimo) : 0;
+    const neto = bruto - isrRetener - imss;
+    return { isrCausado, subsidio, isrRetener, imss, neto };
   },
 
   /* ISR de un pago extraordinario (aguinaldo, prima de antigüedad,
