@@ -51,7 +51,7 @@ DNS (Hostinger): `www` y apex apuntando a Vercel; `www.calculamx.net` como domin
 |---|---|---|
 | `<head>` de cada página + `data-ad-client` + `ads.txt` | `ca-pub-6755325201030636` | ✅ configurado |
 | `js/site.js` → `GA4_ID` | `G-HQWK5N6623` | ✅ configurado |
-| Todos los `.html` → `data-ad-slot` | `0000000000` … `0000000007` | ⬜ pendiente — reemplazar solo si creas **anuncios manuales** en AdSense (ver abajo) |
+| Bloques manuales (`<ins class="adsbygoogle">`) | — | Se quitaron los marcadores (oct 2026): Google los veía como sitio sin terminar. Agrégalos solo con un `data-ad-slot` real |
 
 ### Cómo funcionan los anuncios
 
@@ -65,15 +65,18 @@ Dos formas de mostrar anuncios, no son excluyentes:
 - **Auto ads** (recomendado para empezar): actívalo en el dashboard de AdSense → "Anuncios"
   → "Auto ads". Google decide solo dónde poner los anuncios, sin tocar código.
 - **Anuncios manuales**: si en AdSense creas un bloque de anuncio específico, te dará un
-  `data-ad-slot`. Reemplaza el marcador correspondiente (`0000000000`, etc.) en el `.html`
-  de esa página — `js/site.js` ya detecta y activa cualquier bloque con un slot real.
+  `data-ad-slot`. Pega el bloque `<aside class="ad-band">…<ins class="adsbygoogle" data-ad-slot="…">…</aside>`
+  donde quieras mostrarlo: `js/site.js` ya activa cualquier bloque con un slot real. No dejes
+  bloques con IDs de ejemplo ni recuadros de "espacio reservado".
 
 ### Estado de la solicitud
 
 1. ✅ Cuenta creada, ID de editor obtenido.
-2. ⬜ Esperando aprobación de Google (de unos días a ~2 semanas).
-3. Mientras revisan, el sitio se ve normal; los anuncios (o los recuadros "Espacio
-   reservado" de los bloques manuales) empiezan a mostrarse al aprobar.
+2. ❌ Primera revisión rechazada (oct 2026) sin motivo específico. Cambios hechos: se quitaron
+   los marcadores de anuncios, se agregaron 10 guías con fuentes oficiales y enlaces desde cada
+   calculadora, y "Contacto" en el pie.
+3. ⬜ Pedir nueva revisión en AdSense → Sitios cuando las guías estén indexadas (2–3 semanas;
+   revisar en Search Console). La revisión tarda de unos días a 2–4 semanas.
 4. No hagas clic en tus propios anuncios.
 
 ## Actualizar las tablas fiscales (cada enero–febrero)
