@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6755325201030636"
+     crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de rendimientos 2026: CETES, Nu, Mercado Pago y más | CalculaMX</title>
+  <meta name="description" content="Calcula cuánto ganas al mes si metes tu dinero en CETES, Nu, Mercado Pago, Openbank, DiDi o Klar. Con la retención de ISR 2026, inflación y comparativo de todas las opciones.">
+  <link rel="canonical" href="https://www.calculamx.net/rendimientos">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CalculaMX">
+  <meta property="og:title" content="Calculadora de rendimientos: CETES, Nu, Mercado Pago y más">
+  <meta property="og:description" content="Cuánto ganas al mes con tu dinero en CETES y las apps de ahorro, ya con la retención de ISR.">
+  <meta property="og:url" content="https://www.calculamx.net/rendimientos">
+  <meta property="og:image" content="https://www.calculamx.net/og-image.png">
+  <meta property="og:locale" content="es_MX">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/ads.css">
+  <script defer src="/js/tax-data.js"></script>
+  <script defer src="/js/site.js"></script>
+  <script defer src="/js/tasas-inversion.js"></script>
+  <script defer src="/js/calc-rendimientos.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculadora de rendimientos — CalculaMX",
+    "url": "https://www.calculamx.net/rendimientos",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "es-MX",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MXN" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculamx.net/" },
+      { "@type": "ListItem", "position": 2, "name": "Calculadora de rendimientos", "item": "https://www.calculamx.net/rendimientos" }
+    ]
+  }
+  </script>
+  <script type="applicat<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Cómo se calcula el rendimiento mensual de una inversión?", "acceptedAnswer": { "@type": "Answer", "text": "Multiplica tu saldo por la tasa anual y divide entre los días del año (365, o 360 en CETES); eso es lo que ganas por día. En un mes son unos 30 días. A eso se le resta la retención de ISR, que en 2026 es de 0.90 % anual sobre tu saldo." } },
+      { "@type": "Question", "name": "¿Cuánto es la retención de ISR sobre intereses en 2026?", "acceptedAnswer": { "@type": "Answer", "text": "0.90 % anual sobre el capital invertido (no sobre los intereses), según la Ley de Ingresos de la Federación 2026. Es un pago provisional que se acredita en la declaración anual." } },
+      { "@type": "Question", "name": "¿Mi dinero está protegido?", "acceptedAnswer": { "@type": "Answer", "text": "En los bancos, el IPAB protege hasta 400 mil UDIs por persona y por banco. En las SOFIPOs, el Prosofipo protege hasta 25 mil UDIs. Los CETES son deuda del Gobierno Federal." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+    <span class="data-chip">DATOS 2026</span>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false">☰</button>
+    <ul id="nav-menu">
+      <li><a href="/isr">ISR</a></li>
+      <li><a href="/aguinaldo">Aguinaldo</a></li>
+      <li><a href="/prestamos">Préstamos</a></li>
+      <li><a href="/rendimientos" aria-current="page">Rendimientos</a></li>
+      <li><a href="/finiquito">Finiquito</a></li>
+      <li><a href="/guias">Guías</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="breadcrumb"><a href="/">Inicio</a> › Calculadora de rendimientos</p>
+  <h1>Calculadora de rendimientos</h1>
+  <p class="lead" style="color:var(--muted);max-width:42rem;">Cuánto ganas al mes si metes tu dinero en CETES, Nu, Mercado Pago y otras apps, ya con la retención de ISR. Compara todas las opciones con tus mismos datos.</p>
+
+  <div class="calc-wrap">
+    <div class="calc-grid">
+      <form class="panel" id="rend-form">
+        <h2>Tu dinero</h2>
+        <div class="field">
+          <label for="rend-monto">¿Cuánto vas a meter?</label>
+          <div class="affix">
+            <span>$</span>
+            <input type="text" id="rend-monto" inputmode="decimal" value="10,000" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="rend-mensual">Ahorro extra cada mes <span class="hint">— opcional</span></label>
+          <div class="affix">
+            <span>$</span>
+            <input type="text" id="rend-mensual" inputmode="decimal" placeholder="0" autocomplete="off">
+            <span>MXN</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="rend-donde">¿Dónde?</label>
+          <select id="rend-donde"></select>
+          <p class="detalle" id="rend-detalle-tasa" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="rend-tasa">Tasa anual <span class="hint">— cámbiala si la tuya es otra</span></label>
+          <div class="affix">
+            <input type="text" id="rend-tasa" inputmode="decimal" autocomplete="off">
+            <span>%</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="rend-meses">¿Por cuánto tiempo?</label>
+          <select id="rend-meses">
+            <option value="1">1 mes</option>
+            <option value="3">3 meses</option>
+            <option value="6">6 meses</option>
+            <option value="12" selected>1 año</option>
+            <option value="24">2 años</option>
+            <option value="36">3 años</option>
+            <option value="60">5 años</option>
+          </select>
+        </div>
+        <div class="field field-check">
+          <input type="checkbox" id="rend-retencion" checked>
+          <label for="rend-retencion">Restar la retención de ISR (0.90 % anual sobre tu saldo)</label>
+        </div>
+        <div class="field">
+          <label for="rend-inflacion">Inflación esperada <span class="hint">— para ver cuánto vale en pesos de hoy</span></label>
+          <div class="affix">
+            <input type="text" id="rend-inflacion" inputmode="decimal" autocomplete="off">
+            <span>% anual</span>
+          </div>
+        </div>
+        <button class="button block" type="submit">Calcular rendimiento <span aria-hidden="true">→</span></button>
+      </form>
+
+      <div class="result" id="rend-result">
+        <p class="result-empty">Escribe cuánto vas a meter, por cuánto tiempo y dónde.</p>
+      </div>
+    </div>
+
+    <div id="rend-comparativo" class="rend-comparativo"></div>
+
+    <div class="how">
+      <h2>Cómo calculamos esto</h2>
+      <ul>
+        <li>Simulamos <strong>día por día</strong>: cada día ganas <code>saldo × tasa anual ÷ 365</code> (en CETES, ÷ 360). En las cuentas a la vista lo ganado se suma a tu saldo cada día; en CETES y ahorros a plazo, al vencer cada plazo, y se reinvierte.</li>
+        <li>Si una app paga una tasa solo hasta cierto monto (por ejemplo, 13 % hasta $25,000), el resto gana la tasa más baja que indica la institución.</li>
+        <li>La <strong>retención de ISR</strong> es de <strong>0.90 % anual sobre tu saldo</strong> (Ley de Ingresos 2026), no sobre lo que ganas. Es un adelanto del impuesto que se acredita en tu declaración anual.</li>
+        <li>Los ahorros extra de cada mes se suman al inicio de cada mes y empiezan a ganar desde ese día.</li>
+        <li>Tasas de referencia revisadas el <strong data-tasas-revisado>8 de octubre de 2026</strong> (CETES: subasta de Banxico del <span data-subasta-cetes>6 de octubre de 2026</span>). Cambian seguido: confírmalas en la app antes de invertir.</li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="prose">
+    <h2>¿Qué conviene: CETES o una app?</h2>
+    <p>Depende de cuánto tienes y para qué. Las apps suelen pagar más, pero casi siempre <strong>solo hasta cierto monto</strong> o si cumples condiciones (compras al mes, una membresía). Arriba de ese tope, la tasa baja. Los CETES pagan lo mismo sin importar el monto y los respalda el Gobierno Federal, pero tu dinero queda fijo hasta que vence el plazo.</p>
+    <p>Una estrategia común: lo que puedas necesitar pronto (tu fondo de emergencia), en una cuenta con liquidez inmediata; lo que no vas a tocar en meses, a plazo o en CETES.</p>
+
+    <h2>Qué tan protegido está tu dinero</h2>
+    <table>
+      <thead><tr><th>Dónde</th><th>Quién lo protege</th><th>Hasta cuánto</th></tr></thead>
+      <tbody>
+        <tr><td>CETES</td><td>Es deuda del Gobierno Federal</td><td>Todo lo invertido</td></tr>
+        <tr><td>Bancos (Nu, Openbank, etc.)</td><td>IPAB</td><td>400 mil UDIs por persona y banco</td></tr>
+        <tr><td>SOFIPOs (DiDi, Klar, etc.)</td><td>Prosofipo</td><td>25 mil UDIs por persona y SOFIPO</td></tr>
+      </tbody>
+    </table>
+    <p>Una UDI vale alrededor de $8.86 pesos, así que 25 mil UDIs son unos $221 mil y 400 mil UDIs, unos $3.5 millones. Si tienes más que eso en una sola institución, considera repartirlo.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <details class="faq">
+      <summary>¿La tasa que anuncian es lo que gano?</summary>
+      <p>Es la tasa anual antes de impuestos. Lo que te llega es un poco menos por la retención de ISR, y si la tasa tiene tope, solo aplica hasta ese monto. La GAT (Ganancia Anual Total) que publican las instituciones ya considera la capitalización; la GAT real además resta la inflación.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Tengo que declarar mis intereses?</summary>
+      <p>La retención es un pago provisional. Si tus intereses reales (los que quedan después de descontar la inflación) superan $100,000 al año, debes presentar declaración anual. Aunque no estés obligado, declarar puede devolverte parte de lo retenido: revísalo con la <a href="/declaracion-anual">calculadora de declaración anual</a>.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Por qué el resultado en pesos de hoy es menor?</summary>
+      <p>Porque la inflación hace que el mismo dinero compre menos con el tiempo. Si tu dinero rinde menos que la inflación, en realidad pierdes poder de compra aunque el saldo crezca.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Qué pasa si elijo un plazo más largo que el tiempo?</summary>
+      <p>Por ejemplo, CETES a 364 días durante 6 meses: te mostramos lo que llevarías ganado, pero ese dinero no estaría disponible hasta que venza el plazo.</p>
+    </details>
+  </section>
+
+  <aside class="promo" aria-label="postula, herramienta de CalculaMX">
+    <div>
+      <p class="tag">Nuevo · De CalculaMX</p>
+      <h2>¿Quieres ganar más para ahorrar más?</h2>
+      <p>Sube tu CV y postula te muestra vacantes en México que encajan contigo, con el sueldo neto de cada oferta calculado con las tablas de CalculaMX.</p>
+    </div>
+    <a class="button" href="https://postula.calculamx.net/?utm_source=calculamx&amp;utm_medium=promo&amp;utm_campaign=rendimientos" data-postula="rendimientos">Probar postula →</a>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/"><span class="mark">$</span> Calcula<b>MX</b></a>
+        <p>Calculadoras fiscales y financieras para México. Herramientas educativas; no constituyen asesoría fiscal ni financiera.</p>
+      </div>
+      <div>
+        <h4>Calculadoras</h4>
+        <a href="/isr">ISR</a>
+        <a href="/aguinaldo">Aguinaldo</a>
+        <a href="/prestamos">Préstamos</a>
+        <a href="/finiquito">Finiquito</a>
+        <a href="/declaracion-anual">Declaración anual</a>
+        <a href="/resico">RESICO</a>
+        <a href="/infonavit">Infonavit</a>
+        <a href="/rendimientos">Rendimientos</a>
+      </div>
+      <div>
+        <h4>Recursos</h4>
+        <a href="/guias">Guías</a>
+        <a href="/sueldo-neto">Sueldo neto</a>
+        <a href="/guias/tabla-isr-2026">Tabla ISR 2026</a>
+        <a href="/acerca">Acerca de</a>
+        <a href="https://postula.calculamx.net/?utm_source=calculamx&amp;utm_medium=footer&amp;utm_campaign=recursos" data-postula="footer">Buscar trabajo (postula)</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/privacidad">Aviso de privacidad</a>
+        <a href="/terminos">Términos de uso</a><a href="mailto:contacto@calculamx.net">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> CalculaMX · www.calculamx.net</span>
+      <span>Datos fiscales revisados en 2026</span>
+    </div>
+  </div>
+</footer>
+
+<div class="consent" hidden>
+  <p>Este sitio muestra anuncios de Google (AdSense), que usa cookies. Si aceptas, también medimos el tráfico con Google Analytics. Consulta el <a href="/privacidad">aviso de privacidad</a>.</p>
+  <div class="actions">
+    <button data-reject>Rechazar</button>
+    <button data-accept>Aceptar</button>
+  </div>
+</div>
+
+</body>
+</html>

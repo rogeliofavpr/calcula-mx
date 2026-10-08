@@ -25,6 +25,11 @@ const DATOS_FISCALES = {
   umaMensual: 3566.22,   /* diaria × 30.4 (publicada por INEGI) */
   umaAnual: 42794.64,
 
+  /* Retención de ISR sobre intereses (LIF 2026, DOF 07/11/2025): 0.90 % anual
+     sobre el CAPITAL que genera los intereses, no sobre el interés. Es un
+     pago provisional que se acredita en la declaración anual. */
+  retencionIntereses: 0.009,
+
   /* Salario mínimo general diario, 2026 (Zona Libre de la Frontera Norte: 440.87). */
   salarioMinimoDiario: 315.04,
   salarioMinimoZLFN: 440.87,
