@@ -353,3 +353,47 @@ details.faq p { margin: 0 0 12px; color: var(--muted); }
 .rend-tabla tr.elegida td { background: var(--mint); }
 .enlace-opcion { background: none; border: 0; padding: 0; font: inherit; font-weight: 700; color: var(--green-strong); text-decoration: underline; cursor: pointer; text-align: left; }
 .field .detalle { font-size: .8rem; color: var(--muted); margin: 6px 0 0; line-height: 1.4; }
+
+/* ---------------- Portada: sección de postula ---------------- */
+.hero-acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+.hero-postula { font-weight: 700; color: var(--green-strong); text-decoration: none; border-bottom: 2px solid var(--yellow); padding-bottom: 2px; }
+.hero-postula:hover { color: var(--ink); }
+
+.banda-postula { background: var(--ink); color: var(--paper); padding: 72px 0; margin: 24px 0; scroll-margin-top: 70px; }
+.banda-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+.banda-postula .eyebrow { color: var(--yellow); }
+.banda-postula h2 { color: var(--paper); font-size: clamp(1.8rem, 3.6vw, 2.6rem); margin: 10px 0 16px; text-wrap: balance; }
+.banda-postula h2 em { color: var(--yellow); font-style: italic; }
+.banda-lead { color: #cfe0da; font-size: 1.08rem; max-width: 34rem; margin: 0 0 20px; }
+.banda-lead strong { color: var(--paper); }
+.banda-lista { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 10px; max-width: 34rem; }
+.banda-lista li { display: flex; gap: 10px; color: #e3eeea; }
+.banda-lista li span { color: var(--yellow); font-weight: 700; }
+.banda-acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.banda-boton { background: var(--yellow); color: var(--ink); }
+.banda-boton:hover { background: #f6d670; color: var(--ink); }
+.banda-nota { font-size: .88rem; color: #a9c2ba; }
+
+.banda-ejemplo { position: relative; max-width: 440px; justify-self: center; width: 100%; }
+.vacante { background: var(--surface); color: var(--ink); border-radius: 16px; padding: 22px; box-shadow: 0 20px 50px -20px rgba(0,0,0,.5); transform: rotate(-1deg); }
+.vacante-top { display: flex; justify-content: space-between; gap: 14px; align-items: flex-start; }
+.vacante-eti { font: 500 11px 'DM Mono', monospace; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin: 0 0 4px; }
+.vacante-titulo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.25rem; margin: 0; }
+.vacante-empresa { color: var(--muted); font-size: .88rem; margin: 2px 0 0; }
+.match { position: relative; width: 58px; height: 58px; flex-shrink: 0; }
+.match svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.match circle { fill: none; stroke-width: 5; }
+.match-fondo { stroke: var(--mint); }
+.match-valor { stroke: var(--green); stroke-linecap: round; }
+.match span { position: absolute; inset: 0; display: grid; place-items: center; font-weight: 700; font-size: .85rem; color: var(--green-strong); }
+.vacante-por { font-size: .92rem; margin: 14px 0; color: var(--ink); }
+.vacante-sueldo { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; background: var(--mint); border-radius: 10px; padding: 10px 12px; font-size: .92rem; color: var(--muted); }
+.vacante-sueldo strong { color: var(--green-strong); font-size: 1.05rem; }
+.vacante-calc { font: 500 11px 'DM Mono', monospace; color: var(--muted); margin: 8px 0 0; }
+.alerta-fraude { display: flex; flex-direction: column; gap: 2px; background: #fbede9; color: #6e1f12; border-radius: 12px; padding: 12px 14px; font-size: .85rem; max-width: 300px; margin: -6px 0 0 auto; position: relative; transform: rotate(1.5deg); box-shadow: 0 12px 30px -14px rgba(0,0,0,.45); }
+
+@media (max-width: 860px) {
+  .banda-grid { grid-template-columns: 1fr; gap: 36px; }
+  .banda-postula { padding: 56px 0; }
+  .alerta-fraude { margin-top: 12px; }
+}
