@@ -17,25 +17,25 @@
    ========================================================================= */
 
 const TASAS_INVERSION = {
-  revisado: '8 de octubre de 2026',
-  subastaCetes: '6 de octubre de 2026',
+  revisado: '18 de octubre de 2026',
+  subastaCetes: '13 de octubre de 2026',
   inflacionEsperada: 4.0, /* % anual; implícita en la GAT real que publica Nu */
 
   opciones: [
     { id: 'cetes28', grupo: 'CETES (Gobierno de México)', nombre: 'CETES 28 días', tipo: 'plazo', plazoDias: 28, base: 360,
-      tramos: [{ tasa: 6.09 }],
+      tramos: [{ tasa: 6.25 }],
       liquidez: 'Cada 28 días', proteccion: 'Gobierno Federal',
       condicion: 'En cetesdirecto.com desde $100. Al vencer se reinvierte.' },
     { id: 'cetes91', grupo: 'CETES (Gobierno de México)', nombre: 'CETES 91 días', tipo: 'plazo', plazoDias: 91, base: 360,
-      tramos: [{ tasa: 6.78 }],
+      tramos: [{ tasa: 6.55 }],
       liquidez: 'Cada 91 días', proteccion: 'Gobierno Federal',
       condicion: 'En cetesdirecto.com desde $100.' },
     { id: 'cetes182', grupo: 'CETES (Gobierno de México)', nombre: 'CETES 182 días', tipo: 'plazo', plazoDias: 182, base: 360,
-      tramos: [{ tasa: 6.91 }],
+      tramos: [{ tasa: 6.79 }],
       liquidez: 'Cada 182 días', proteccion: 'Gobierno Federal',
       condicion: 'En cetesdirecto.com desde $100.' },
     { id: 'cetes364', grupo: 'CETES (Gobierno de México)', nombre: 'CETES 364 días', tipo: 'plazo', plazoDias: 364, base: 360,
-      tramos: [{ tasa: 7.44 }],
+      tramos: [{ tasa: 7.11 }],
       liquidez: 'Cada 364 días', proteccion: 'Gobierno Federal',
       condicion: 'En cetesdirecto.com desde $100.' },
 
@@ -67,7 +67,7 @@ const TASAS_INVERSION = {
     { id: 'openbank', grupo: 'Otras apps', nombre: 'Openbank · Cuenta Open', tipo: 'vista', base: 365,
       tramos: [{ hasta: 30000, tasa: 13.00 }, { hasta: 1000000, tasa: 7.00 }, { tasa: 6.50 }],
       liquidez: 'Inmediata', proteccion: 'IPAB (400 mil UDIs)',
-      condicion: '13 % hasta $30,000, 7 % hasta $1 millón y 6.5 % lo demás, con la cuenta Open+ y el dinero en apartados.' },
+      condicion: '13 % hasta $30,000, 7 % hasta $1 millón y 6.5 % lo demás, con la cuenta Open+ y el dinero en apartados. El 13 % pide al menos una compra, pago de servicios o recarga al mes con tarjeta Openbank; si no, ese tramo rinde 7 %.' },
     { id: 'didi', grupo: 'Otras apps', nombre: 'DiDi Cuenta', tipo: 'vista', base: 365,
       tramos: [{ hasta: 10000, tasa: 15.00 }, { tasa: 7.00 }],
       liquidez: 'Inmediata', proteccion: 'Prosofipo (25 mil UDIs)',
