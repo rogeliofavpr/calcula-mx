@@ -13,9 +13,15 @@
       ]
     },
     {
-      "source": "/(.*).(css|js|svg|png|jpg|jpeg|webp|woff2)",
+      "source": "/(.*).(svg|png|jpg|jpeg|webp|woff2)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+      ]
+    },
+    {
+      "source": "/(.*).(css|js)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     }
   ]
