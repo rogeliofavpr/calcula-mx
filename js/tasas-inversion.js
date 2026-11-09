@@ -17,27 +17,27 @@
    ========================================================================= */
 
 const TASAS_INVERSION = {
-  revisado: '18 de octubre de 2026',
-  subastaCetes: '13 de octubre de 2026',
+  revisado: '9 de noviembre de 2026',
+  subastaCetes: '3 de noviembre de 2026',
   inflacionEsperada: 4.0, /* % anual; implícita en la GAT real que publica Nu */
 
   opciones: [
     { id: 'cetes28', grupo: 'CETES (Gobierno de México)', nombre: 'CETES 28 días', tipo: 'plazo', plazoDias: 28, base: 360,
-      tramos: [{ tasa: 6.25 }],
+      tramos: [{ tasa: 6.50 }],
       liquidez: 'Cada 28 días', proteccion: 'Gobierno Federal',
       condicion: 'En cetesdirecto.com desde $100. Al vencer se reinvierte.' },
     { id: 'cetes91', grupo: 'CETES (Gobierno de México)', nombre: 'CETES 91 días', tipo: 'plazo', plazoDias: 91, base: 360,
-      tramos: [{ tasa: 6.55 }],
+      tramos: [{ tasa: 6.69 }],
       liquidez: 'Cada 91 días', proteccion: 'Gobierno Federal',
       condicion: 'En cetesdirecto.com desde $100.' },
     { id: 'cetes182', grupo: 'CETES (Gobierno de México)', nombre: 'CETES 182 días', tipo: 'plazo', plazoDias: 182, base: 360,
-      tramos: [{ tasa: 6.79 }],
+      tramos: [{ tasa: 6.72 }],
       liquidez: 'Cada 182 días', proteccion: 'Gobierno Federal',
       condicion: 'En cetesdirecto.com desde $100.' },
     { id: 'cetes364', grupo: 'CETES (Gobierno de México)', nombre: 'CETES 364 días', tipo: 'plazo', plazoDias: 364, base: 360,
-      tramos: [{ tasa: 7.11 }],
+      tramos: [{ tasa: 7.12 }],
       liquidez: 'Cada 364 días', proteccion: 'Gobierno Federal',
-      condicion: 'En cetesdirecto.com desde $100.' },
+      condicion: 'En cetesdirecto.com desde $100. Se subasta cada dos semanas: esta es la tasa de la subasta del 27 de octubre de 2026.' },
 
     { id: 'nu247', grupo: 'Nu', nombre: 'Nu · Cajita 24/7', tipo: 'vista', base: 365,
       tramos: [{ tasa: 6.50 }],
